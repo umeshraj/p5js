@@ -9,7 +9,10 @@ function setup(){
 function draw(){
   background(128);
 	fill(255, 0, 0);
-  rect(10, 10, 20, 20);
+	let x = random(-5, 5);
+	let y = random(-5, 5);
+  rect(x, y, 20, 20);
+	myH1.position(x, y);
 }
 
 function mousePressed(){
