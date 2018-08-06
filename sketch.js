@@ -14,10 +14,10 @@ function setup(){
 	slider = createSlider(10, 100, 40);
 	createP("");
 	input = createInput("type your name");
+	input.changed(updateText);
 
 	nameP.mouseOver(overpara);
 	nameP.mouseOut(outpara);
-
 
 }
 
@@ -27,6 +27,10 @@ function draw(){
   ellipse(50, 50, slider.value(), slider.value());
 	text(input.value(), 75, 75);
 	// nameP.html(input.value());
+}
+
+function updateText(){
+	nameP.html(input.value());
 }
 
 function overpara(){
