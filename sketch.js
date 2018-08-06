@@ -5,8 +5,11 @@ function setup(){
   background(0);
 
   // para = select("#unicorn");
-  para = select("p");
-  para.mouseOver(changeBackground);
+  para = selectAll("p");
+  for (let p of para){
+    // p.mouseOver(changeBackground);
+    p.style("background-color", 'yellow');
+  }
   button = select("#button");
   button.mousePressed(canvasBkgnd);
 }
