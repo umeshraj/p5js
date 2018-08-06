@@ -14,7 +14,7 @@ function setup(){
 	slider = createSlider(10, 100, 40);
 	createP("");
 	nameInput = createInput("type your name");
-	nameInput.changed(updateText);
+	nameInput.input(updateText);
 
 	nameP.mouseOver(overpara);
 	nameP.mouseOut(outpara);
