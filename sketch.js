@@ -12,7 +12,10 @@ function setup(){
 	button = createButton("Go");
 	button.mousePressed(changeColor);
 	slider = createSlider(10, 100, 40);
-	createP("");
+	text2 = createP("This is another paragraph");
+	text2.style("background-color", "pink");
+	text2.style("color", "black");
+
 	nameInput = createInput("type your name");
 	nameInput.input(updateText);
 
