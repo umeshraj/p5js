@@ -3,6 +3,7 @@ var button;
 var slider;
 var nameInput;
 var nameP;
+var text2;
 
 function setup(){
   createCanvas(200, 200);
@@ -13,8 +14,9 @@ function setup(){
 	button.mousePressed(changeColor);
 	slider = createSlider(10, 100, 40);
 	text2 = createP("This is another paragraph");
-	text2.style("background-color", "pink");
-	text2.style("color", "black");
+
+	text2.mouseOver(changeStyle);
+	text2.mouseOut(revertStyle);
 
 	nameInput = createInput("type your name");
 	nameInput.input(updateText);
@@ -30,6 +32,16 @@ function draw(){
   ellipse(50, 50, slider.value(), slider.value());
 	text(nameInput.value(), 75, 75);
 	// nameP.html(input.value());
+}
+
+function changeStyle(){
+	text2.style("background-color", "pink");
+	text2.style("color", "black");
+}
+
+function revertStyle(){
+	text2.style("background-color", "purple");
+	text2.style("color", "white");
 }
 
 function updateText(){
