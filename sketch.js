@@ -8,7 +8,7 @@ function setup(){
   textBox = createInput('enter text');
   slider = createSlider(10, 64, 16);
 
-  textBox.changed(doSomething);
+  textBox.input(doSomething);
 }
 
 function doSomething(){
