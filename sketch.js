@@ -5,7 +5,7 @@ function setup(){
   background(0);
 
   // para = select("#unicorn");
-  para = selectAll("p");
+  para = selectAll(".rainbow");
   for (let p of para){
     // p.mouseOver(changeBackground);
     p.style("background-color", 'yellow');
@@ -18,5 +18,5 @@ function canvasBkgnd(){
   background(random(255));
 }
 function changeBackground(){
-  para.style('background-color', 'green');
+  p.style('background-color', 'green');
 }
