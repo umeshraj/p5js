@@ -9,7 +9,7 @@ function setup(){
   }
 
   for (let idx=0; idx<100; idx++){
-    let p = createP('blueberries');
+    let p = createA('http://www.google.com', 'blueberries');
     let x = random(windowWidth);
     let y = random(windowHeight);
     p.position(x, y);
