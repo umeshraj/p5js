@@ -1,9 +1,12 @@
+var happy = ['rainbow', 'unicorn', 'books', 'ml', 'math', 'purple', 'chocolate'];
 function setup(){
-  var canvas = createCanvas(400, 400);
-  canvas.parent("canvasp")
+  noCanvas();
+  var button = select("button");
+  button.mousePressed(addItem);
 }
 
-function draw(){
-  background(0);
-  ellipse(200, 200, random(100), random(100));
+function addItem(){
+  var r = random(happy);
+  var li = createElement('li', r);
+  li.parent("#happylist");
 }
