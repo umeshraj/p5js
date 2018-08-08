@@ -1,31 +1,29 @@
-var images=[];
 
-function setup(){
-  noCanvas();
-  for (let idx=0; idx<5; idx++){
-    let p = createP("This is a link: ");
-    p.style("background-color", "#CCC");
-    p.style("padding", '16px');
-
-    var a = createA("#", 'apples');
-    a.mousePressed(addPhoto);
-    a.parent(p);
-  }
-
-  let button = select("#clear");
-  button.mousePressed(clearStuff);
+function setup() {
+  // create canvas
+  var c = createCanvas(710, 400);
+  background(100);
+  // Add an event for when a file is dropped onto the canvas
+  c.drop(gotFile);
 }
 
-function clearStuff(){
-  for (let im of images){
-    im.remove();
-  }
+function draw() {
+  fill(255);
+  noStroke();
+  textSize(24);
+  textAlign(CENTER);
+  text('Drag an image file onto the canvas.', width/2, height/2);
+  noLoop();
 }
 
-function addPhoto(){
-  var img = createImg("images/flower.jpg");
-  img.size(100, 100);
-  img.parent(this.parent());
-  // backup the images
-  images.push(img);
+function gotFile(file) {
+  // If it's an image file
+  if (file.type === 'image') {
+    // Create an image DOM element but don't show it
+    var img = createImg(file.data).hide();
+    // Draw the image onto the canvas
+    image(img, 0, 0, width, height);
+  } else {
+    println('Not an image file!');
+  }
 }
