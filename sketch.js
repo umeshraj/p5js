@@ -1,12 +1,25 @@
-var happy = ['rainbow', 'unicorn', 'books', 'ml', 'math', 'purple', 'chocolate'];
 function setup(){
-  noCanvas();
-  var button = select("button");
-  button.mousePressed(addItem);
+  createCanvas()
+  for (let idx=0; idx<5; idx++){
+    let p = createA('#', 'apples');
+    let x = random(windowWidth);
+    let y = random(windowHeight);
+    p.position(x, y);
+    p.class('apple');
+  }
+
+  for (let idx=0; idx<5; idx++){
+    let p = createA('#', 'blueberry');
+    let x = random(windowWidth);
+    let y = random(windowHeight);
+    p.position(x, y);
+    p.class('blueberry');
+    p.mousePressed(changeClass);
+  }
+
 }
 
-function addItem(){
-  var r = random(happy);
-  var li = createElement('li', r);
-  li.parent("#happylist");
+function changeClass(){
+  this.removeClass('blueberry')
+  this.class('apple');
 }
