@@ -1,25 +1,31 @@
+var images=[];
+
 function setup(){
-  createCanvas()
+  noCanvas();
   for (let idx=0; idx<5; idx++){
-    let p = createA('#', 'apples');
-    let x = random(windowWidth);
-    let y = random(windowHeight);
-    p.position(x, y);
-    p.class('apple');
+    let p = createP("This is a link: ");
+    p.style("background-color", "#CCC");
+    p.style("padding", '16px');
+
+    var a = createA("#", 'apples');
+    a.mousePressed(addPhoto);
+    a.parent(p);
   }
 
-  for (let idx=0; idx<5; idx++){
-    let p = createA('#', 'blueberry');
-    let x = random(windowWidth);
-    let y = random(windowHeight);
-    p.position(x, y);
-    p.class('blueberry');
-    p.mousePressed(changeClass);
-  }
-
+  let button = select("#clear");
+  button.mousePressed(clearStuff);
 }
 
-function changeClass(){
-  this.removeClass('blueberry')
-  this.class('apple');
+function clearStuff(){
+  for (let im of images){
+    im.remove();
+  }
+}
+
+function addPhoto(){
+  var img = createImg("images/flower.jpg");
+  img.size(100, 100);
+  img.parent(this.parent());
+  // backup the images
+  images.push(img);
 }
