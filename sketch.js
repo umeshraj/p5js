@@ -15,5 +15,5 @@ function setup(){
 function addPhoto(){
   var img = createImg("images/flower.jpg");
   img.size(100, 100);
-  img.parent(this);
+  img.parent(this.parent());
 }
