@@ -1,3 +1,4 @@
+var images=[];
 
 function setup(){
   noCanvas();
@@ -10,10 +11,21 @@ function setup(){
     a.mousePressed(addPhoto);
     a.parent(p);
   }
+
+  let button = select("#clear");
+  button.mousePressed(clearStuff);
+}
+
+function clearStuff(){
+  for (let im of images){
+    im.remove();
+  }
 }
 
 function addPhoto(){
   var img = createImg("images/flower.jpg");
   img.size(100, 100);
   img.parent(this.parent());
+  // backup the images
+  images.push(img);
 }
