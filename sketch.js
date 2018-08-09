@@ -1,5 +1,6 @@
 
 let slider;
+let x = 128;
 
 function setup() {
   createCanvas(300, 300);
@@ -7,5 +8,7 @@ function setup() {
 }
 
 function draw() {
-  background(slider.value());
+  slider.value(x);
+  x = x + random(-5, 5);
+  background(x);
 }
