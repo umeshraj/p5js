@@ -9,9 +9,7 @@ function draw(){
   translate(width/2, height/2);
   rotate(angle);
 
-  stroke(255);
-  line(0, 0, 50, 50);
   fill(255)
-  rect(50, 50, 100, 50);
+  rect(0, 0, 100, 50);
   angle+=1;
 }
