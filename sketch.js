@@ -1,27 +1,20 @@
-let angle = 0;
+let x = 0;
 function setup() {
-  createCanvas(400, 400);
-  angleMode(DEGREES);
-  rectMode(CENTER);
+  createCanvas(200, 200);
+  rainbow();
+}
+
+function rainbow(){
+  createP("rainbow");
 }
 
 function draw(){
-  background(0);
-  push();
-  translate(100, 100);
-  rotate(angle);
-  scale(4);
-  // rect1
-  fill(255, 100, 50);
-  rect(0, 0, 100, 50);
-  pop();
+  background(51);
+  stroke(255);
+  line(x, 0, x, height);
 
-  //rect2
-  push();
-  translate(300, 300);
-  rotate(-3*angle);
-  // fill(50, 100, 255);
-  rect(0, 0, 100, 50);
-  pop();
-  angle+=5;
+  x += 3;
+  if (x>width){
+    x = 0;
+  }
 }
