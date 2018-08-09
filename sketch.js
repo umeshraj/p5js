@@ -7,15 +7,11 @@ function setup() {
   for(let idx=0; idx<100; idx++){
       sliders[idx] = createSlider(0, 255, 50);
   }
+  sliders[0].input(adjustOtherSliders);
 }
 
-function draw() {
-  let offset = 0;
-  let x;
-  for(let idx=0; idx<sliders.length; idx++){
-      x = map(sin(angle+offset), -1, 1, 0, 255);
-      offset += 0.25;
-      sliders[idx].value(x);
+function adjustOtherSliders() {
+  for(let idx=1; idx<sliders.length; idx++){
+      sliders[idx].value(sliders[0].value());
   }
-  angle += 0.1;
 }
