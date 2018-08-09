@@ -1,17 +1,14 @@
-
-let sliders = [];
-let angle = 0;
-
 function setup() {
-  noCanvas();
-  for(let idx=0; idx<100; idx++){
-      sliders[idx] = createSlider(0, 255, 50);
-  }
-  sliders[0].input(adjustOtherSliders);
+  createCanvas(400, 400);
 }
 
-function adjustOtherSliders() {
-  for(let idx=1; idx<sliders.length; idx++){
-      sliders[idx].value(sliders[0].value());
-  }
+function draw(){
+  background(0);
+  // rect(50, 50, 100, 50);
+
+  // translate(50, 50);
+  translate(mouseX, mouseY);
+  rect(0, 0, 100, 50);
+
+  rect(50, 50, 100, 10);
 }
