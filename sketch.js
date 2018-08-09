@@ -1,17 +1,27 @@
-
-let sliders = [];
 let angle = 0;
-
 function setup() {
-  noCanvas();
-  for(let idx=0; idx<100; idx++){
-      sliders[idx] = createSlider(0, 255, 50);
-  }
-  sliders[0].input(adjustOtherSliders);
+  createCanvas(400, 400);
+  angleMode(DEGREES);
+  rectMode(CENTER);
 }
 
-function adjustOtherSliders() {
-  for(let idx=1; idx<sliders.length; idx++){
-      sliders[idx].value(sliders[0].value());
-  }
+function draw(){
+  background(0);
+  push();
+  translate(100, 100);
+  rotate(angle);
+
+  // rect1
+  fill(255, 100, 50);
+  rect(0, 0, 100, 50);
+  pop();
+
+  //rect2
+  push();
+  translate(300, 300);
+  rotate(-3*angle);
+  fill(50, 100, 255);
+  rect(0, 0, 100, 50);
+  pop();
+  angle+=5;
 }
