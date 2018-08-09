@@ -1,29 +1,17 @@
 
+let sliders = [];
+let angle = 0;
+
 function setup() {
-  // create canvas
-  var c = createCanvas(710, 400);
-  background(100);
-  // Add an event for when a file is dropped onto the canvas
-  c.drop(gotFile);
+  noCanvas();
+  for(let idx=0; idx<100; idx++){
+      sliders[idx] = createSlider(0, 255, 50);
+  }
+  sliders[0].input(adjustOtherSliders);
 }
 
-function draw() {
-  fill(255);
-  noStroke();
-  textSize(24);
-  textAlign(CENTER);
-  text('Drag an image file onto the canvas.', width/2, height/2);
-  noLoop();
-}
-
-function gotFile(file) {
-  // If it's an image file
-  if (file.type === 'image') {
-    // Create an image DOM element but don't show it
-    var img = createImg(file.data).hide();
-    // Draw the image onto the canvas
-    image(img, 0, 0, width, height);
-  } else {
-    println('Not an image file!');
+function adjustOtherSliders() {
+  for(let idx=1; idx<sliders.length; idx++){
+      sliders[idx].value(sliders[0].value());
   }
 }
