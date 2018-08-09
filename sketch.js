@@ -20,7 +20,7 @@ function draw(){
   push();
   translate(300, 300);
   rotate(-3*angle);
-  fill(50, 100, 255);
+  // fill(50, 100, 255);
   rect(0, 0, 100, 50);
   pop();
   angle+=5;
