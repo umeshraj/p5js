@@ -1,6 +1,9 @@
 let x = 0;
 function setup() {
   createCanvas(200, 200);
+}
+
+function mousePressed(){
   setTimeout(rainbow, 3000);
 }
 
