@@ -1,7 +1,7 @@
 let x = 0;
 function setup() {
   createCanvas(200, 200);
-  rainbow();
+  setTimeout(rainbow, 3000);
 }
 
 function rainbow(){
