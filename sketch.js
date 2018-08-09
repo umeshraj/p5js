@@ -1,6 +1,6 @@
 
 let slider;
-let x = 128;
+let angle =0;
 
 function setup() {
   createCanvas(300, 300);
@@ -8,7 +8,8 @@ function setup() {
 }
 
 function draw() {
+  let x = map(sin(angle), -1, 1, 0, 255);
   slider.value(x);
-  x = x + random(-5, 5);
-  background(x);
+  background(slider.value());
+  angle += 0.1;
 }
