@@ -14,7 +14,7 @@ function draw() {
   let x;
   for(let idx=0; idx<sliders.length; idx++){
       x = map(sin(angle+offset), -1, 1, 0, 255);
-      offset += 0.0234;
+      offset += 0.25;
       sliders[idx].value(x);
   }
   angle += 0.1;
