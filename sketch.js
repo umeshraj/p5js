@@ -10,7 +10,7 @@ function draw(){
   push();
   translate(100, 100);
   rotate(angle);
-
+  scale(4);
   // rect1
   fill(255, 100, 50);
   rect(0, 0, 100, 50);
