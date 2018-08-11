@@ -1,19 +1,11 @@
-var gravity = 0.1;
-
 function Particle(x, y){
   this.x = x;
   this.y = y;
-  this.yspeed = 0;
   this.history = [];
 
   this.update = function(){
-    this.y+=this.yspeed;
-    this.yspeed += gravity;
-
-    if (this.y > height){
-      this.y = height;
-      this.yspeed *= -0.9;
-    }
+    this.x += random(-5, 5);
+    this.y += random(-5, 5);
 
     let v = createVector(this.x, this.y);
     this.history.push(v);
