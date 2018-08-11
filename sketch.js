@@ -1,5 +1,6 @@
 let x=0;
 let timer;
+let timer2;
 let counter=0;
 let interval;
 var button;
@@ -7,24 +8,13 @@ var button;
 function setup() {
   createCanvas(200, 200);
   timer = createP("Timer");
-  button = createButton('Start timer');
-  button.mousePressed(startTimer);
-}
-
-function startTimer(){
-  interval = setInterval(timeIt, 500);
-  button.html('Stop timer');
-  button.mousePressed(stopTimer);
-}
-
-function stopTimer(){
-  clearInterval(interval);
-  button.html('Start timer');
-  button.mousePressed(startTimer);
+  timer2 = createP("Timer2");
+  setInterval(timeIt, 500);
 }
 
 function timeIt(){
   timer.html(counter);
+  timer2.html(counter);
   counter++;
 }
 
