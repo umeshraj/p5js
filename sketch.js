@@ -1,17 +1,18 @@
-var particles = [];
 function setup(){
-  createCanvas(400, 300);
-}
+  createCanvas(640, 480);
+  background(200);
 
-function mousePressed(){
-  let particle = new Particle(mouseX, mouseY);
-      particles.push(particle);
+  for(let idx=0; idx<25; idx++){
+    let x = random(width);
+    let y = random(height);
+    let r = 32;
+    noStroke();
+    fill(255, 0, 150, 100);
+    ellipse(x, y, 2*r, 2*r);
+  }
+
 }
 
 function draw(){
-  background(200);
-  for (let p of particles){
-    p.update();
-    p.show();
-  }
+
 }
