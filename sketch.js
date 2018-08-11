@@ -1,11 +1,17 @@
-var particle;
+var particles = [];
 function setup(){
   createCanvas(400, 300);
-  particle = new Particle(100, 100);
+}
+
+function mousePressed(){
+  let particle = new Particle(mouseX, mouseY);
+      particles.push(particle);
 }
 
 function draw(){
   background(200);
-  particle.update();
-  particle.show();
+  for (let p of particles){
+    p.update();
+    p.show();
+  }
 }
