@@ -1,40 +1,17 @@
-let x=0;
-let timer;
-let timer2;
-let interval;
-var button;
-
-function setup() {
-  createCanvas(200, 200);
-  timer = createP("Timer");
-  timer2 = createP("Timer2");
-  makeTimer(timer, 500);
-  makeTimer(timer2, 1000);
+var particles = [];
+function setup(){
+  createCanvas(400, 300);
 }
 
-function makeTimer(elt, waitTime){
-  let counter = 0;
-  setInterval(timeIt, waitTime);
-
-  function timeIt(){
-    elt.html(counter);
-    counter++;
-  }
-}
-
-function timeIt(){
-  timer.html(counter);
-  timer2.html(counter);
-  counter++;
+function mousePressed(){
+  let particle = new Particle(mouseX, mouseY);
+      particles.push(particle);
 }
 
 function draw(){
-  background(51);
-  stroke(255);
-  line(x, 0, x, height);
-
-  x += 3;
-  if (x>width){
-    x = 0;
+  background(200);
+  for (let p of particles){
+    p.update();
+    p.show();
   }
 }
