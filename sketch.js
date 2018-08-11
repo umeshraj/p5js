@@ -4,16 +4,18 @@ function setup(){
   createCanvas(640, 480);
   background(200);
 
-  for(let idx=0; idx<25; idx++){
+  let protection = 0;
+  while ((circles.length < 250) && (protection<10000)){
     let circle = {
       x: random(width),
       y: random(height),
-      r: 32
+      r: random(10, 40)
     };
 
     if (isCircleValid(circle)){
       circles.push(circle);
     }
+    protection++;
   }
   drawCircles();
 }
