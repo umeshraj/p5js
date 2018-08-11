@@ -1,14 +1,31 @@
-let x = 0;
+let x=0;
+let timer;
+let counter=0;
+let interval;
+var button;
+
 function setup() {
   createCanvas(200, 200);
+  timer = createP("Timer");
+  button = createButton('Start timer');
+  button.mousePressed(startTimer);
 }
 
-function mousePressed(){
-  setTimeout(rainbow, 3000);
+function startTimer(){
+  interval = setInterval(timeIt, 500);
+  button.html('Stop timer');
+  button.mousePressed(stopTimer);
 }
 
-function rainbow(){
-  createP("rainbow");
+function stopTimer(){
+  clearInterval(interval);
+  button.html('Start timer');
+  button.mousePressed(startTimer);
+}
+
+function timeIt(){
+  timer.html(counter);
+  counter++;
 }
 
 function draw(){
