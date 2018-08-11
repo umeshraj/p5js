@@ -1,11 +1,16 @@
 let x=0;
 let timer;
 let counter=0;
+let interval;
 
 function setup() {
   createCanvas(200, 200);
   timer = createP("Timer");
-  setInterval(timeIt, 5000);
+  interval = setInterval(timeIt, 500);
+}
+
+function mousePressed(){
+  clearInterval(interval);
 }
 
 function timeIt(){
