@@ -1,14 +1,16 @@
-let x = 0;
+let x=0;
+let timer;
+let counter=0;
+
 function setup() {
   createCanvas(200, 200);
+  timer = createP("Timer");
+  setInterval(timeIt, 5000);
 }
 
-function mousePressed(){
-  setTimeout(rainbow, 3000);
-}
-
-function rainbow(){
-  createP("rainbow");
+function timeIt(){
+  timer.html(counter);
+  counter++;
 }
 
 function draw(){
