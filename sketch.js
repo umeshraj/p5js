@@ -1,7 +1,6 @@
 let x=0;
 let timer;
 let timer2;
-let counter=0;
 let interval;
 var button;
 
@@ -9,7 +8,18 @@ function setup() {
   createCanvas(200, 200);
   timer = createP("Timer");
   timer2 = createP("Timer2");
-  setInterval(timeIt, 500);
+  makeTimer(timer, 500);
+  makeTimer(timer2, 1000);
+}
+
+function makeTimer(elt, waitTime){
+  let counter = 0;
+  setInterval(timeIt, waitTime);
+
+  function timeIt(){
+    elt.html(counter);
+    counter++;
+  }
 }
 
 function timeIt(){
