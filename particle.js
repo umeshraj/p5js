@@ -9,7 +9,7 @@ function Particle(x, y){
 
     let v = createVector(this.x, this.y);
     this.history.push(v);
-    if (this.history.length > 10){
+    if (this.history.length > 200){
       this.history.splice(0, 1);
     }
   }
@@ -20,10 +20,12 @@ function Particle(x, y){
       ellipse(this.x, this.y, 24, 24);
 
       // showing history
+      noFill();
+      beginShape()
       for (let pos of this.history){
-        fill(128);
-        ellipse(pos.x, pos.y, 8, 8);
+        vertex(pos.x, pos.y);
       }
+      endShape();
 
   }
 
