@@ -9,6 +9,9 @@ function Particle(x, y){
 
     let v = createVector(this.x, this.y);
     this.history.push(v);
+    if (this.history.length > 10){
+      this.history.splice(0, 1);
+    }
   }
 
   this.show = function() {
