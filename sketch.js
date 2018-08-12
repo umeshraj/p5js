@@ -1,45 +1,57 @@
-let circles = [];
+let vertices = [];
 
 function setup(){
   createCanvas(640, 480);
   background(200);
-
-  let protection = 0;
-  while ((circles.length < 250) && (protection<10000)){
-    let circle = {
-      x: random(width),
-      y: random(height),
-      r: random(10, 40)
-    };
-
-    if (isCircleValid(circle)){
-      circles.push(circle);
-    }
-    protection++;
-  }
-  drawCircles();
 }
 
-function isCircleValid(circle){
-  isValid = true;
-  for (let c of circles){
-    let d = dist(circle.x, circle.y, c.x, c.y);
-    if (d < (circle.r + c.r)){
-      isValid = false;
-      break;
-    }
-  }
-  return isValid;
-}
-
-function drawCircles(){
-  noStroke();
-  fill(255, 0, 100, 100);
-  for(let c of circles){
-    ellipse(c.x, c.y, 2*c.r, 2*c.r);
-  }
+function mousePressed(){
+  let v = createVector(mouseX, mouseY);
+  vertices.push(v);
 }
 
 function draw(){
+  background(51);
+  let reached = [];
+  let unreached = [];
+  // move all vertices into unreached
+  for(let v of vertices){
+    unreached.push(v);
+  }
+  // pick the first unreached to start algo
+  reached.push(unreached[0]);
+  //removed selected from unreached
+  unreached.splice(0, 1);
 
+  // for each v in reached, find the closest v
+  while (unreached.length > 0){
+    let rIdx;
+    let uIdx;
+    // for every unreached
+    let maxDist = 100000;
+    for(let i=0; i<reached.length; i++){
+        for(let j=0; j<unreached.length; j++){
+          let r = reached[i];
+          let u = unreached[j];
+          let d = dist(r.x, r.y, u.x, u.y)
+          if (d < maxDist){
+            maxDist = d;
+            rIdx = i;
+            uIdx = j;
+          }
+        }
+    }
+    stroke(255);
+    line(reached[rIdx].x, reached[rIdx].y,
+      unreached[uIdx].x, unreached[uIdx].y)
+    reached.push(unreached[uIdx]);
+    unreached.splice(uIdx, 1);
+  }
+
+
+  for (let v of vertices){
+    stroke(0);
+    fill(255);
+    ellipse(v.x, v.y, 10, 10);
+  }
 }
