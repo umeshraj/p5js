@@ -2,7 +2,7 @@ var sketch = function(p){
   p.x = 100;
   p.y = 100;
   p.setup = function(){
-    p.createCanvas(640, 480);
+    p.createCanvas(200, 200);
     p.background(200);
     p.x = p.width/2;
     p.y = p.height/2;
@@ -18,3 +18,8 @@ var sketch = function(p){
 }
 
 var myp5 = new p5(sketch);
+
+function resetBackground(){
+  myp5.background(myp5.random(255));
+}
+setTimeout(resetBackground, 3000);
