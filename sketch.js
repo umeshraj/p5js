@@ -8,13 +8,7 @@ function setup() {
   createP("Drag the mouse to generate new boids.");
   button = createButton("Clear");
   button.mousePressed(resetSketch);
-
-  flock = new Flock();
-  // Add an initial set of boids into the system
-  for (var i = 0; i < 100; i++) {
-    var b = new Boid(width/2,height/2);
-    flock.addBoid(b);
-  }
+  resetSketch();
 }
 
 function resetSketch(){
