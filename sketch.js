@@ -1,4 +1,4 @@
-var sketch = function(p){
+var sketch1 = function(p){
   p.x = 100;
   p.y = 100;
   p.setup = function(){
@@ -17,8 +17,27 @@ var sketch = function(p){
   }
 }
 
-var myp5_1 = new p5(sketch);
-var myp5_2 = new p5(sketch);
+var sketch2 = function(p){
+  p.x = 100;
+  p.y = 100;
+  p.setup = function(){
+    p.createCanvas(200, 200);
+    p.background(200);
+    p.x = p.width/2;
+    p.y = p.height/2;
+  }
+
+  p.draw = function(){
+    p.fill(255, 255, 100, 10);
+    p.noStroke();
+    p.ellipse(p.x, p.y, 30, 30);
+    p.x += p.random(-10, 10);
+    p.y += p.random(-10, 10);
+  }
+}
+
+var myp5_1 = new p5(sketch1);
+var myp5_2 = new p5(sketch2);
 
 function resetBackground(){
   myp5_1.x = myp5_1.width/2;
