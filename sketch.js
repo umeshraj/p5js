@@ -17,11 +17,12 @@ var sketch = function(p){
   }
 }
 
-var myp5 = new p5(sketch);
+var myp5_1 = new p5(sketch);
+var myp5_2 = new p5(sketch);
 
 function resetBackground(){
-  myp5.x = myp5.width/2;
-  myp5.y = myp5.height/2;
-  myp5.background(myp5.random(255));
+  myp5_1.x = myp5_1.width/2;
+  myp5_1.y = myp5_1.height/2;
+  myp5_1.background(200);
 }
 setInterval(resetBackground, 3000);
