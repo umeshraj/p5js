@@ -20,6 +20,8 @@ var sketch = function(p){
 var myp5 = new p5(sketch);
 
 function resetBackground(){
+  myp5.x = myp5.width/2;
+  myp5.y = myp5.height/2;
   myp5.background(myp5.random(255));
 }
-setTimeout(resetBackground, 3000);
+setInterval(resetBackground, 3000);
