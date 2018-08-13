@@ -1,4 +1,5 @@
 let song1;
+let song2;
 let angle=0;
 let loading = true;
 
@@ -8,23 +9,20 @@ function preload(){
 function setup(){
   createCanvas(300, 300);
   console.log(floor(millis()) + 'ms');
-  song1 = loadSound('audio/bark.mp3', soundLoaded, errorFn, whileLoadFn);
+  rainbowSong(song1, 'audio/song1.mp3');
+  rainbowSong(song2, 'audio/song2.mp3');
 }
 
 
-function errorFn(){
-  console.log('Unable to load');
+function rainbowSong(song, filename){
+  loadSound(filename, soundLoaded);
+  function soundLoaded(sound){
+    song=sound;
+    console.log('Loaded ' + filename);
+    // song.play();
+  }
 }
 
-function whileLoadFn(percent){
-  console.log(percent);
-}
-
-function soundLoaded(song){
-  song1=song;
-  loading = false;
-  // song1.play();
-}
 
 function draw(){
   background(51);
