@@ -8,13 +8,22 @@ function preload(){
 function setup(){
   createCanvas(300, 300);
   console.log(floor(millis()) + 'ms');
-  song1 = loadSound('audio/bark.mp3', soundLoaded);
+  song1 = loadSound('audio/bark.mp3', soundLoaded, errorFn, whileLoadFn);
+}
+
+
+function errorFn(){
+  console.log('Unable to load');
+}
+
+function whileLoadFn(percent){
+  console.log(percent);
 }
 
 function soundLoaded(song){
   song1=song;
   loading = false;
-  song1.play();
+  // song1.play();
 }
 
 function draw(){
