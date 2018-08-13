@@ -34,6 +34,16 @@ function draw(){
   background(51);
 
   if(loading){
+
+    stroke(255);
+    noFill();
+    rect(10, 10, 200, 10);
+
+    noStroke();
+    fill(128);
+    let w = 200*songCounter/totalSongs;
+    rect(10, 10, w, 10);
+
     translate(width/2, height/2);
     rotate(angle);
     strokeWeight(4);
