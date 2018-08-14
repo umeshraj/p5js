@@ -2,7 +2,7 @@ let songs = [];
 let angle=0;
 let loading = true;
 let songCounter = 0;
-let totalSongs = 9;
+let totalSongs = 4;
 
 function preload(){
 }
@@ -11,7 +11,7 @@ function setup(){
   createCanvas(300, 300);
   console.log(floor(millis()) + 'ms');
   for (let idx                                                                                                                                                                                                                          =0; idx<totalSongs; idx++){
-      rainbowSong(idx, 'audio/song'+ (idx+1) + '.mp3');
+      rainbowSong(idx, '../audio/song'+ (idx+1) + '.mp3');
   }
 }
 
