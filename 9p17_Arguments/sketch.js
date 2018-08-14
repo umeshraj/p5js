@@ -9,6 +9,8 @@ function setup(){
   // using vectors
   let v = createVector(20, 50);
   particles[2] = new Particle(v);
+  // using strings
+  particles[3] = new Particle("50, 75");
 }
 
 function draw(){
@@ -22,11 +24,15 @@ function Particle(a, b){
   if (a instanceof p5.Vector){
       this.x = a.x;
       this.y = a.y;
+  }else if (typeof(a)=='string'){
+    let nums = a.split(',');
+    this.x = Number(nums[0]);
+    this.y = Number(nums[1]);
   }else{
     this.x = a || 100;
     this.y = b || 100;
   }
-  
+
   this.show = function(){
     fill(255);
     ellipse(this.x, this.y, 16, 16);
