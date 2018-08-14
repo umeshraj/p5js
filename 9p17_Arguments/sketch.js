@@ -8,7 +8,10 @@ function draw(){
   background(51);
 }
 
-function sum(a, b){
-  console.log(arguments);
-  return a + b;
+function sum(){
+  let out = 0;
+  for(let v of arguments){
+    out += v;
+  }
+  return out;
 }
