@@ -1,20 +1,24 @@
-let p;
+let particles=[];
 
 function setup(){
   createCanvas(400, 300);
-  p = new Particle();
+  particles[0] = new Particle();
+  particles[1] = new Particle(150, 50);
 }
 
 function draw(){
   background(51);
-  p.show();
+  for(let p of particles){
+    p.show();
+  }
 }
 
-function Particle(){
-  this.pos = createVector(width/2, height/2);
+function Particle(x, y){
+  this.x = x || 100;
+  this.y = y || 100;
   this.show = function(){
     fill(255);
-    ellipse(this.pos.x, this.pos.y, 16, 16);
+    ellipse(this.x, this.y, 16, 16);
   }
 }
 
