@@ -1,47 +1,57 @@
-var sketch1 = function(p){
-  p.x = 100;
-  p.y = 100;
-  p.setup = function(){
-    p.createCanvas(200, 200);
-    p.background(200);
-    p.x = p.width/2;
-    p.y = p.height/2;
-  }
+let songs = [];
+let angle=0;
+let loading = true;
+let songCounter = 0;
+let totalSongs = 9;
 
-  p.draw = function(){
-    p.fill(255, 0, 100, 10);
-    p.noStroke();
-    p.ellipse(p.x, p.y, 30, 30);
-    p.x += p.random(-10, 10);
-    p.y += p.random(-10, 10);
+function preload(){
+}
+
+function setup(){
+  createCanvas(300, 300);
+  console.log(floor(millis()) + 'ms');
+  for (let idx                                                                                                                                                                                                                          =0; idx<totalSongs; idx++){
+      rainbowSong(idx, 'audio/song'+ (idx+1) + '.mp3');
   }
 }
 
-var sketch2 = function(p){
-  p.x = 100;
-  p.y = 100;
-  p.setup = function(){
-    p.createCanvas(200, 200);
-    p.background(200);
-    p.x = p.width/2;
-    p.y = p.height/2;
-  }
 
-  p.draw = function(){
-    p.fill(255, 255, 100, 10);
-    p.noStroke();
-    p.ellipse(p.x, p.y, 30, 30);
-    p.x += p.random(-10, 10);
-    p.y += p.random(-10, 10);
+function rainbowSong(index, filename){
+  loadSound(filename, soundLoaded);
+  function soundLoaded(sound){
+    songs[index] = sound;
+    console.log('Loaded ' + filename);
+    songCounter++
+    if (songCounter==totalSongs){
+      loading = false;
+    }
+    // song.play();
   }
 }
 
-var myp5_1 = new p5(sketch1);
-var myp5_2 = new p5(sketch2);
 
-function resetBackground(){
-  myp5_1.x = myp5_1.width/2;
-  myp5_1.y = myp5_1.height/2;
-  myp5_1.background(200);
+function draw(){
+  background(51);
+
+  if(loading){
+
+    stroke(255);
+    noFill();
+    rect(10, 10, 200, 10);
+
+    noStroke();
+    fill(128);
+    let w = 200*songCounter/totalSongs;
+    rect(10, 10, w, 10);
+
+    translate(width/2, height/2);
+    rotate(angle);
+    strokeWeight(4);
+    stroke(255);
+    line(0, 0, 100, 0);
+    angle += 0.1;
+  }else{
+    background(0, 255, 0, 100);
+  }
+
 }
-setInterval(resetBackground, 3000);
