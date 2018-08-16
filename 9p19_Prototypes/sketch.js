@@ -8,8 +8,10 @@ Particle.prototype.show = function(){
 }
 
 let p;
+let v;
 
 function setup(){
   createCanvas(400, 300);
   p = new Particle();
+  v = createVector(2, 3);
 }
