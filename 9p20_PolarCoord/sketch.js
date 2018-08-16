@@ -11,7 +11,7 @@ function draw(){
   strokeWeight(10);
   point(x, y);
 
-  let angle = -45;
+  let angle = map(mouseX, 0, width, -90, 90);
   let r = 100; // 100 pixels away
   dx = r * cos(angle);
   dy = r * sin(angle);
