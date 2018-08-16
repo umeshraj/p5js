@@ -30,5 +30,5 @@ function draw(){
     curveVertex(150, 50);
     curveVertex(250, 60);
     curveVertex(300, 200);
-  endShape();
+  endShape(CLOSE);
 }
