@@ -1,14 +1,17 @@
 function setup(){
+  angleMode(DEGREES);
   createCanvas(400, 300);
   background(51);
 
   noFill();
   stroke(255);
+  let spacing = 50;
   beginShape();
-  vertex(10, 20);
-  vertex(12, 89);
-  vertex(88, 132);
-  vertex(45, 23);
+    for (let theta=0; theta<360; theta+=spacing){
+      let x = width/2 + 100 * sin(theta);
+      let y = height/2 + 100 * cos(theta);
+      vertex(x, y);
+    }
   endShape(CLOSE);
 }
 
