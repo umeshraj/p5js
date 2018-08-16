@@ -9,7 +9,7 @@ function draw(){
   // draw points
   strokeWeight(12);
   stroke('red');
-  point(100, 200);
+  point(mouseX, mouseY);
   point(150, 50);
   point(250, 60);
   point(300, 200);
@@ -26,7 +26,7 @@ function draw(){
     //   let y = height/2 + 100 * cos(theta);
     //   vertex(x, y);
     // }
-    curveVertex(100, 200);
+    curveVertex(mouseX, mouseY);
     curveVertex(150, 50);
     curveVertex(250, 60);
     curveVertex(300, 200);
