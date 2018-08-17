@@ -1,6 +1,7 @@
 let graphics;
 let x = 50;
 let y = 50;
+let angle = 0;
 
 function setup(){
   createCanvas(400, 300);
@@ -17,5 +18,15 @@ function draw(){
   y += random(-5, 5);
 
   image(graphics, 0, 0);
-  image(graphics, 100, 100);
+
+  push();
+  imageMode(CENTER);
+  tint(0, 0, 128);
+  translate(150, 150);
+  rotate(angle);
+  image(graphics, 0, 0);
+  pop();
+
+  angle += 0.1;
+
 }
