@@ -17,6 +17,5 @@ function draw(){
   y += random(-5, 5);
 
   image(graphics, 0, 0);
-  fill(255, 0, 255);
-  ellipse(mouseX, mouseY, 8, 8);
+  image(graphics, 100, 100);
 }
