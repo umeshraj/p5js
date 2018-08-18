@@ -6,6 +6,12 @@ function preload(){
 
 function setup(){
   noCanvas();
-  let bird = data.birds[1].members[2];
-  createP(bird)
+  let birds = data.birds;
+  for(let bird of birds){
+    createElement("h1", bird.family)
+    let members = bird.members;
+    for(let member of members){
+      createDiv(member);
+    }
+  }
 }
