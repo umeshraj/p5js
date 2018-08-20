@@ -1,14 +1,23 @@
 let weather;
 let apiPath = "http://api.openweathermap.org/data/2.5/weather?q=";
-let city = "Bangalore";
 let apiKey = "&APPID=***REMOVED***";
 let units = "&units=metric";
-
+let input;
 
 function setup(){
   createCanvas(400, 300);
+  let button = select("#submit");
+  button.mousePressed(getWeatherData)
+  // text input
+  input = select("#city");
+
+}
+
+function getWeatherData(){
+  let city = input.value();
   let url = apiPath + city + apiKey + units;
   loadJSON(url, gotData);
+
 }
 
 function gotData(data){
