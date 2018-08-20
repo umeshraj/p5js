@@ -5,16 +5,19 @@ let issY = 0;
 
 function setup(){
   createCanvas(400, 300);
+  setInterval(askISS, 1000);
+}
+
+function askISS(){
   loadJSON(apiPath, gotData);
 }
 
 function gotData(data){
-  console.log(data);
   let lat = data.iss_position.latitude;
   let lon = data.iss_position.longitude;
 
-  issX = map(lat, -90, 90, 0, width);
-  issY = map(lon, -90, 90, 0, height);
+  issX = map(lat, 11, 30, 0, width);
+  issY = map(lon, -90, -70, 0, height);
 }
 
 function draw(){
