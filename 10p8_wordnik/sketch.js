@@ -11,12 +11,13 @@ function setup(){
 }
 
 function askWorknik(){
-  loadJSON("wordnik.json", gotData)
+  loadJSON("rainbow.json", gotData)
 }
 
 function gotData(data){
-  let newWord = data[0].words[0];
-  link.html(newWord);
+  let rand1 = random(data);
+  word = random(rand1.words);
+  link.html(word);
 }
 
 function draw(){
