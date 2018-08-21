@@ -15,7 +15,8 @@ function askWorknik(){
 }
 
 function gotData(data){
-  console.log(data)
+  let newWord = data[0].words[0];
+  link.html(newWord);
 }
 
 function draw(){
