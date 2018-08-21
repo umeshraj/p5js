@@ -1,0 +1,49 @@
+[
+  {
+    "relationshipType": "equivalent",
+    "words": [
+      "sea bow"
+    ]
+  },
+  {
+    "relationshipType": "hypernym",
+    "words": [
+      "arc",
+      "bow",
+      "promise",
+      "hope"
+    ]
+  },
+  {
+    "relationshipType": "cross-reference",
+    "words": [
+      "spurious",
+      "rainbow style"
+    ]
+  },
+  {
+    "relationshipType": "synonym",
+    "words": [
+      "bowl",
+      "iris",
+      "water gall",
+      "weather gall",
+      "spectrum"
+    ]
+  },
+  {
+    "relationshipType": "same-context",
+    "words": [
+      "crimson",
+      "violet",
+      "sunset",
+      "silvery",
+      "emerald",
+      "radiance",
+      "multicolored",
+      "lightning",
+      "silver",
+      "sparkle"
+    ]
+  }
+]
