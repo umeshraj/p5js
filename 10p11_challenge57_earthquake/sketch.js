@@ -7,10 +7,12 @@ let clon = 0;
 // Vancouver: 49.2827° N, 123.1207° W
 let lat = 49.2827;
 let lon = -123.1207;
-
+// earthquakes data
+let earthquakes;
 
 function preload(){
     mapImg = loadImage("https://api.mapbox.com/styles/v1/mapbox/dark-v9/static/0,0,1,0,0/1024x512?access_token=***REMOVED***")
+    earthquakes = loadStrings("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.csv")
 }
 
 function setup(){
@@ -22,10 +24,19 @@ function setup(){
   let cx = mercX(clon);
   let cy = mercY(clat);
 
-  let x = mercX(lon) - cx;
-  let y = mercY(lat) - cy;
-  fill(255, 0, 255, 200);
-  ellipse(x, y, 10, 10);
+  for(idx=0; idx<earthquakes.length; idx++){
+    let data = earthquakes[idx].split(/,/);
+    // console.log(data);
+    lat = data[1];
+    lon = data[2]
+
+    let x = mercX(lon) - cx;
+    let y = mercY(lat) - cy;
+    fill(255, 0, 255, 200);
+    ellipse(x, y, 10, 10);
+
+  }
+
 }
 
 // mapping long to x,y
