@@ -29,11 +29,18 @@ function setup(){
     // console.log(data);
     lat = data[1];
     lon = data[2]
-
+    let mag = data[4];
     let x = mercX(lon) - cx;
     let y = mercY(lat) - cy;
+
+    // convert mag to log scale
+    mag = pow(10, mag);
+    mag = sqrt(mag);
+    var magMax = sqrt(pow(10, 10));
+
+    let d = map(mag, 0, magMax, 0, 300);
     fill(255, 0, 255, 200);
-    ellipse(x, y, 10, 10);
+    ellipse(x, y, d, d);
 
   }
 
