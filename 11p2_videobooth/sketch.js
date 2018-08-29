@@ -17,8 +17,17 @@ function takeSnap(){
 }
 
 function draw(){
+  let w = 80;
+  let h = 60;
+  let x = 0;
+  let y = 0;
   for(let img of snapshots){
     tint(255, 50);
-    image(img, 0, 0);
+    image(img, x, y, w, h);
+    x += w;
+    if (x >= width){
+      x = 0;
+      y += h;
+    }
   }
 }
