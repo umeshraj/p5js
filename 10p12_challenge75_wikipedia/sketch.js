@@ -1,18 +1,26 @@
 let userInput;
 let searchUrl = 'https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=';
 let contentUrl = 'https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&titles=';
+let counter = 0;
 
 function setup(){
   noCanvas();
   userInput = select('#userinput');
-  userInput.changed(goWiki);
-  goWiki();  // force printing of what is in the input box
+  userInput.changed(startSearch);
+  // goWiki(userInput.value());  // force printing of what is in the input box
 }
 
-function goWiki(){
-  let term = userInput.value();
-  let url = searchUrl + term;
-  loadJSON(url, gotSearch, "jsonp")
+function startSearch(){
+  counter = 0;
+  goWiki(userInput.value());
+}
+
+function goWiki(term){
+  counter++;
+  if (counter < 10){
+    let url = searchUrl + term;
+    loadJSON(url, gotSearch, "jsonp")
+  }
 }
 
 function gotSearch(data){
@@ -35,5 +43,5 @@ function gotContent(data){
   let wordRegex = /\b\w{4,}\b/g;
   let words = content.match(wordRegex);
   let word = random(words);
-  console.log(word);
+  goWiki(word);
 }
