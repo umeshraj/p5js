@@ -14,6 +14,10 @@ function goWiki(){
   loadJSON(url, gotData, "jsonp")
 }
 
-function gotData(){
-  // console.log(data);
+function gotData(data){
+  //randomly pick an element
+  let title = random(data[1]);
+  // replace all spaces with _
+  title = title.replace(/\s+/g, '_')
+  console.log(title);
 }
