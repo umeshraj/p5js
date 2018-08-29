@@ -1,2 +1,16 @@
 
 *.mp3
+
+\.git\.bfg-report/2018-08-28/22-12-34/cache-stats\.txt
+
+\.git\.bfg-report/2018-08-28/22-12-34/changed-files\.txt
+
+\.git\.bfg-report/2018-08-28/22-12-34/object-id-map\.old-new\.txt
+
+\.git\.bfg-report/2018-08-28/22-12-34/protected-dirt/9a779a43-HEAD\.csv
+
+\.git\.bfg-report/2018-08-28/22-16-55/cache-stats\.txt
+
+\.git\.bfg-report/2018-08-28/22-16-55/changed-files\.txt
+
+\.git\.bfg-report/2018-08-28/22-16-55/object-id-map\.old-new\.txt
