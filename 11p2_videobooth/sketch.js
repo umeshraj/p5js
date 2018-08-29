@@ -17,5 +17,8 @@ function takeSnap(){
 }
 
 function draw(){
-
+  for(let img of snapshots){
+    tint(255, 50);
+    image(img, 0, 0);
+  }
 }
