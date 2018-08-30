@@ -19,8 +19,11 @@ function draw(){
         let b = video.pixels[idx+2];
 
         let bright = (r+g+b)/3;
-        fill(bright);
-        rect(x*vScale, y*vScale, vScale, vScale);
+        let w = map(bright, 0, 255, 0, vScale);
+        noStroke();
+        fill(255);
+        rectMode(CENTER);
+        rect(x*vScale, y*vScale, w, w);
     }
   }
   // updatePixels();
