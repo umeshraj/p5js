@@ -1,12 +1,18 @@
-let slider;
+let sliders = [];
+
 let angle = 0;
 function setup(){
   noCanvas();
-  slider = createSlider(0, 255, 50);
+  for (let i=0;i<10;i++){
+    sliders[i] = createSlider(0, 255, 50);
+  }
 }
 
 function draw(){
-  let x = map(sin(angle), -1, 1, 0, 255) ;
-  slider.value(x);
+  let x = map(sin(angle), -1, 1, 0, 255);
+  for (let i=0; i<sliders.length;i++){
+    sliders[i].value(x);  
+  }
+
   angle += 0.1;
 }
