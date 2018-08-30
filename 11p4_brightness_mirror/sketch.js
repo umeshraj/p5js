@@ -13,7 +13,7 @@ function draw(){
   // loadPixels();
   for (let y=0; y<video.height; y++){
     for (let x=0; x<video.width; x++){
-        let idx = (x +y*video.width) * 4;
+        let idx = (video.width-x+1+ (y*video.width) ) * 4;
         let r = video.pixels[idx+0];
         let g = video.pixels[idx+1];
         let b = video.pixels[idx+2];
