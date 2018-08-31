@@ -6,7 +6,7 @@ function setup(){
   createCanvas(640, 480);
   video = createCapture(VIDEO);
   video.size(width/vscale, height/vscale);
-  particle = new Particle(width/2, height/2);
+  particle = new Particle(0/2, 0/2);
   background(51);
 }
 
