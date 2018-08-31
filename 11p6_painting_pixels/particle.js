@@ -3,17 +3,17 @@ function Particle(x, y){
   this.y = y;
 
   this.update = function(){
-    // this.x += random(-10, 10);
-    // this.y += random(-10, 10);
-    this.x += 24;
-    if (this.x >= width){
-      this.x=0;
-      this.y+=24;
-    }
-    if (this.y>=height){
-      this.x=0;
-      this.y=0;
-    }
+    this.x += random(-10, 10);
+    this.y += random(-10, 10);
+    // this.x += 24;
+    // if (this.x >= width){
+    //   this.x=0;
+    //   this.y+=24;
+    // }
+    // if (this.y>=height){
+    //   this.x=0;
+    //   this.y=0;
+    // }
   }
 
   this.show = function(){

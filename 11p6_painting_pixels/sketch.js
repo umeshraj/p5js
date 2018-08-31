@@ -1,17 +1,21 @@
 let video;
 let vscale = 16;
-let particle;
+let particles = [];
 
 function setup(){
   createCanvas(640, 480);
   video = createCapture(VIDEO);
   video.size(width/vscale, height/vscale);
-  particle = new Particle(0/2, 0/2);
+  for (let idx=0; idx<100; idx++){
+    particles[idx] = new Particle(width/2, height/2);
+  }
   background(51);
 }
 
 function draw(){
   video.loadPixels();
-  particle.update();
-  particle.show();
+  for (let particle of particles){
+    particle.update();
+    particle.show();    
+  }
 }
