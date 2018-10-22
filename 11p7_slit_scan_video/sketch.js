@@ -1,4 +1,5 @@
 let video;
+let x = 0;
 
 function setup(){
   createCanvas(800, 240);
@@ -9,5 +10,10 @@ function setup(){
 
 function draw(){
   background(51);
-  image(video, 0, 0)
+  video.loadPixels()
+  // image(video, 0, 0)
+  let w = video.width;
+  let h = video.height;
+  copy(video, w/2, 0, 1, h, x, 0, 1, h);
+  x++;
 }
