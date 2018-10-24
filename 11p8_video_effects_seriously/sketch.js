@@ -15,10 +15,17 @@ function setup(){
   let seriously = new Seriously();
   let src = seriously.source('#p5video');
   let target = seriously.target('#p5canvas');
-  let blur = seriously.effect('blur');
-  blur.amount = '#blur_slider';
-  blur.source = src;
-  target.source = blur;
+
+
+  // let blur = seriously.effect('blur');
+  // blur.amount = '#blur_slider';
+  // blur.source = src;
+  // target.source = blur;
+
+  let chroma = seriously.effect('chroma');
+  chroma.screen = [0.5, 0.1, 0.4, 1];
+  chroma.source = src;
+  target.source = chroma;
 
   seriously.go()
 }
