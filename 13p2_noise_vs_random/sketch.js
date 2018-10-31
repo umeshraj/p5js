@@ -1,6 +1,7 @@
 // let xoff1 = 0;
 // let xoff2 = 10000;
-
+let incr = 0.01;
+let start = 0;
 function setup(){
   createCanvas(400, 400);
 }
@@ -16,15 +17,17 @@ function draw(){
   // xoff2 += 0.01;
   // ellipse(x, y, 24, 24);
 
-  let xoff = 0;
+  let xoff = start;
   beginShape();
   for (var x=0; x<width; x++){
     stroke(255);
     // y = random(height);
     y = noise(xoff) * height;
     vertex(x, y);
-    xoff += 0.01;
+    xoff += incr;
   }
   endShape();
-  noLoop();
+  start += incr;
+
+  // noLoop();
 }
