@@ -16,10 +16,14 @@ function draw(){
   // xoff2 += 0.01;
   // ellipse(x, y, 24, 24);
 
+  let xoff = 0;
   beginShape();
   for (var x=0; x<width; x++){
     stroke(255);
-    vertex(x, random(height));
+    // y = random(height);
+    y = noise(xoff) * height;
+    vertex(x, y);
+    xoff += 0.01;
   }
   endShape();
   noLoop();
