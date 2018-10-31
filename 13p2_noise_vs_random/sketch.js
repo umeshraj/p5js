@@ -10,19 +10,16 @@ function draw(){
   background(51);
   stroke(255);
   noFill();
-  // var x = map(noise(xoff1), 0, 1, 0, width);
-  // var y = map(noise(xoff2), 0, 1, 0, height);
-
-  // xoff1 += 0.01;
-  // xoff2 += 0.01;
-  // ellipse(x, y, 24, 24);
 
   let xoff = start;
   beginShape();
   for (var x=0; x<width; x++){
+    var n = map(noise(xoff), 0, 1, -50, 50);
+    var s = map(sin(xoff), -1, 1, 0, height);
+    var y = n + s;
     stroke(255);
     // y = random(height);
-    y = noise(xoff) * height;
+    // y = noise(xoff) * height;
     vertex(x, y);
     xoff += incr;
   }
