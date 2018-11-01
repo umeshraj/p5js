@@ -13,13 +13,17 @@ function startLottery(){
 }
 
 function draw(){
+    var results = select("#results");
     if (started){
         var r = floor(random(prob));
 
         if (r == 1){
-            console.log("Won lottery!!!!!");
+            results.html("You won!!");
+            noLoop();
+            // console.log("Won lottery!!!!!");
         }else{
-            console.log("Lost lottery");
+            // console.log("Lost lottery");
+            results.html("Try again");
         }    
     }
 }
