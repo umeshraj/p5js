@@ -1,4 +1,4 @@
-var prob = 50;
+var prob = 500;
 var button;
 var started = false;
 
@@ -6,10 +6,12 @@ function setup(){
     noCanvas();
     button = select("#start");
     button.mousePressed(startLottery);
+    noLoop();
 }
 
 function startLottery(){
     started = true;
+    loop();
 }
 
 function draw(){
