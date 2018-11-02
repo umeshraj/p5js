@@ -17,6 +17,10 @@ function setup(){
 function updateProbability(){
     prob = entrants.html()/10;
     select("#chance").html(prob);
+
+    var notwinning = (prob-1)/prob;
+    var num =  log(0.01)/log(notwinning);
+    select("#99percent").html('~' + floor(num));
 }
 
 function startLottery(){
