@@ -2,12 +2,21 @@ var prob = 500;
 var button;
 var started = false;
 var total = 0;
+var entrants;
 
 function setup(){
     noCanvas();
     button = select("#start");
     button.mousePressed(startLottery);
+
+    entrants = select("#entrants");
+    entrants.input(updateProbability); 
     noLoop();
+}
+
+function updateProbability(){
+    prob = entrants.html()/10;
+    select("#chance").html(prob);
 }
 
 function startLottery(){
