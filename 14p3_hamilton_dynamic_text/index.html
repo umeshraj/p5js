@@ -11,10 +11,22 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.sound.js"></script>
 	<script type="text/javascript" src="sketch.js"></script>
+
+	<style>
+	body{
+		padding: 20px;
+	}
+	#entrants{
+		background-color: lightslategray;
+		padding: 4px;
+	}
+	</style>
 </head>
 <body>
     <h1>Hamilton Lottery Simulator</h1>
-    <p>This simulator assumes 10 pairs of tickets each night with 50,000 people entering each lottery.</p>
+	<p>This simulator assumes 10 pairs of tickets each night with 
+		<span id="entrants" contenteditable="true">50000</span> 
+		people entering each lottery.</p>
 
     <p>You have 1 in 5,000 chance of winning</p>
     <p>In order to a 99% chance of winning the lottery at least once, you 
