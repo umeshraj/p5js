@@ -16,6 +16,15 @@ function tweetEvent(eventMsg){
     // var fs = require('fs');
     // var json = JSON.stringify(eventMsg, null, 2);
     // fs.writeFile("tweet.json", json);
+
+    var replyto = eventMsg.in_reply_to_screen_name;
+    var text = eventMsg.text;
+    var from = eventMsg.user.screen_name;
+
+    if (replyto == 'a2zitp'){
+        var newtweet = '@' + from + ' thank you!';
+        tweetIt(newtweet);
+    }
 }
 
 // tweetIt();
