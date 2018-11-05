@@ -9,12 +9,13 @@ var T = new Twit(config);
 var stream = T.stream('user');
 
 // anytime someone follows me
-stream.on('follow', followed);
+stream.on('tweet', tweetEvent);
 
-function followed(eventMsg){
-    var name = eventMsg.source.name;
-    var screenName = eventMsg.source.screen_name;
-    tweetIt('@' + screenName + ' thank you for following me!');
+function tweetEvent(eventMsg){
+    // The following code is just to avoid looking at docs
+    // var fs = require('fs');
+    // var json = JSON.stringify(eventMsg, null, 2);
+    // fs.writeFile("tweet.json", json);
 }
 
 // tweetIt();
