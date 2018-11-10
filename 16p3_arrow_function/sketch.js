@@ -2,7 +2,7 @@ let counter1;
 
 function setup(){
   noCanvas();
-  counter1 = new Counter();
+  counter1 = new Counter(100, 500);
 }
 
 function draw(){
@@ -10,14 +10,13 @@ function draw(){
 }
 
 class Counter{
-  constructor(){
+  constructor(start, wait){
     this.count = 0;
     this.p = createP('');
-  }
-
-  countIt(){
-    this.count++;
-    this.p.html(this.count);
+ 
+    setInterval(()=>{
+      this.count++;
+      this.p.html(this.count);
+    } , wait);
   }
 }
-
