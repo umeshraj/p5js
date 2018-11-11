@@ -15,7 +15,11 @@ function setup(){
   
 }
 
-function multiplier(x, factor){
-  return x * factor;
+function multiplier(factor){
+
+   newFn = function(x){
+    return x * factor;
+  }
+  return newFn;
 }
 
