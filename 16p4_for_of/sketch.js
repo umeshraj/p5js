@@ -1,3 +1,5 @@
+/// <reference path="./p5.global-mode.d.ts" />
+
 let bubbles = [];
 function setup(){
   createCanvas(400, 300);
@@ -33,4 +35,5 @@ class Bubble{
     noFill();
     ellipse(this.x, this.y, 24, 24);
   }
+
 }
