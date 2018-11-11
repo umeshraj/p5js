@@ -1,9 +1,11 @@
-/// <reference path="./p5.global-mode.d.ts" />
+/// <reference path="./p5d/p5.global-mode.d.ts" />
+
+function sing(){
+  console.log('la la la la');
+}
+
 
 function setup(){
-  createCanvas(400, 300);
+  
 }
 
-function draw(){
-  background(51);
-}
