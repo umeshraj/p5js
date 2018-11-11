@@ -16,10 +16,6 @@ function setup(){
 }
 
 function multiplier(factor){
-
-   newFn = function(x){
-    return x * factor;
-  }
-  return newFn;
+  return x => x * factor;
 }
 
