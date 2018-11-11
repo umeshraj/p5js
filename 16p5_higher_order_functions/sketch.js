@@ -15,3 +15,7 @@ function setup(){
   
 }
 
+function multiplier(x, factor){
+  return x * factor;
+}
+
