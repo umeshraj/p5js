@@ -16,3 +16,10 @@ for (let val of vals){
   sum += val;
 }
 console.log("Sum with for of is: " + sum);
+
+// Doing this with reduce
+function sumReduce(acc, val){
+  return acc + val;
+}
+let sumWithReduce = vals.reduce(sumReduce)
+console.log("Sum with reduce is: " + sumWithReduce);
