@@ -19,7 +19,8 @@ console.log("Sum with for of is: " + sum);
 
 // Doing this with reduce
 function sumReduce(acc, val){
+  console.log(acc);
   return acc + val;
 }
-let sumWithReduce = vals.reduce(sumReduce)
+let sumWithReduce = vals.reduce(sumReduce, 0);
 console.log("Sum with reduce is: " + sumWithReduce);
