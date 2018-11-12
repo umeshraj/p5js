@@ -24,3 +24,7 @@ function sumReduce(acc, val){
 }
 let sumWithReduce = vals.reduce(sumReduce, 0);
 console.log("Sum with reduce is: " + sumWithReduce);
+
+// Arrow fn + reduce
+let sumWithArrow = vals.reduce((acc, val) => acc + val, 10);
+console.log("Sum with arrow+reduce+initial value: " + sumWithArrow)
