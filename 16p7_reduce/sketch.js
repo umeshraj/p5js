@@ -28,3 +28,13 @@ console.log("Sum with reduce is: " + sumWithReduce);
 // Arrow fn + reduce
 let sumWithArrow = vals.reduce((acc, val) => acc + val, 10);
 console.log("Sum with arrow+reduce+initial value: " + sumWithArrow)
+
+// Min/max with reduce
+function findMax(acc, val){
+  if (val > acc){
+    acc = val;
+  }
+  return acc
+}
+let maxValue = vals.reduce(findMax);
+console.log("Max val with reduce+fn: " + maxValue);
