@@ -8,4 +8,11 @@ let sum = 0;
 for(let i=0; i<vals.length; i++){
   sum+=vals[i];
 }
-console.log("Sum is: " + sum)
+console.log("Sum w/ traditional adding is: " + sum);
+
+// Sum with for of
+sum = 0
+for (let val of vals){
+  sum += val;
+}
+console.log("Sum with for of is: " + sum);
