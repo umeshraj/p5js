@@ -8,5 +8,12 @@ function doubler(x){
   return x*2;
 }
 
+//  Regular call to fn
 let doubled = vals.map(doubler)
-console.log(doubled);
+// Anonymous version
+let doubledAnonymous = vals.map(function (x){
+  return x*2;
+});
+
+console.log("Regular: " + doubled);
+console.log("Anonymous: " + doubledAnonymous)
