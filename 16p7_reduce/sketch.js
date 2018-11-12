@@ -1,9 +1,11 @@
 /// <reference path="./p5d/p5.global-mode.d.ts" />
 
-function setup(){
-  createCanvas(400, 300);
-}
+let vals = [5, 4, 1, 2, 9];
+console.log(vals);
 
-function draw(){
-  background(51);
+// Sum the traditional way
+let sum = 0;
+for(let i=0; i<vals.length; i++){
+  sum+=vals[i];
 }
+console.log("Sum is: " + sum)
