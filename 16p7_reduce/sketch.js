@@ -38,3 +38,14 @@ function findMax(acc, val){
 }
 let maxValue = vals.reduce(findMax);
 console.log("Max val with reduce+fn: " + maxValue);
+
+// Min with reduce and arrow fn
+
+let maxValueArrow = vals.reduce((acc, val) => {
+    if (val > acc){
+      acc = val;
+    }
+    return acc;
+  }  
+);
+console.log("Max val with arrow fn: " + maxValueArrow);
