@@ -22,3 +22,12 @@ let doubleArrow = vals.map(x => x*2);
 console.log("Regular: " + doubled);
 console.log("Anonymous: " + doubledAnonymous)
 console.log("Arrow: " + doubleArrow)
+
+// Fill functions
+vals.fill(10);  // Changes current array (Hmm. Expected with fill, no?)
+console.log(vals);
+
+// Round about way to make random array
+let randArray = new Array(5);
+randArray = randArray.fill(0).map(x => Math.floor(Math.random()*10))
+console.log("Random array: " + randArray);
