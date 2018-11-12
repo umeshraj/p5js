@@ -40,7 +40,6 @@ let maxValue = vals.reduce(findMax);
 console.log("Max val with reduce+fn: " + maxValue);
 
 // Min with reduce and arrow fn
-
 let maxValueArrow = vals.reduce((acc, val) => {
     if (val > acc){
       acc = val;
@@ -49,3 +48,7 @@ let maxValueArrow = vals.reduce((acc, val) => {
   }  
 );
 console.log("Max val with arrow fn: " + maxValueArrow);
+
+// Min with arrow fn and ternary operator
+let maxValArrowTernary = vals.reduce((acc, val) => val>acc ? val : acc);
+console.log("Max with arrow+ternary: " + maxValArrowTernary);
