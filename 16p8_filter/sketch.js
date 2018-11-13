@@ -12,3 +12,13 @@ console.log("Filter with fn: " + valsEven);
 // Arrow function
 let valsEvenArrow = vals.filter(x => x%2 ==0);
 console.log("Filter with arrow: " + valsEvenArrow);
+
+// String filtering
+let string = "It was a dark  night."
+let  words = string.split(" ");
+console.log("array has empty space:");
+console.log(words);
+
+let wordsNonEmpty = string.split(" ").filter(s => s.length > 0);
+console.log("array has no empty spaces: ");
+console.log(wordsNonEmpty);
