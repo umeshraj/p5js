@@ -7,4 +7,8 @@ function isEven(num){
 }
 
 let valsEven = vals.filter(isEven);
-console.log(valsEven);
+console.log("Filter with fn: " + valsEven);
+
+// Arrow function
+let valsEvenArrow = vals.filter(x => x%2 ==0);
+console.log("Filter with arrow: " + valsEvenArrow);
