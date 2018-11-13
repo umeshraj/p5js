@@ -1,9 +1,10 @@
 /// <reference path="./p5d/p5.global-mode.d.ts" />
 
-function setup(){
-  createCanvas(400, 300);
+vals = [5, 4, 9, 2, 1]
+
+function isEven(num){
+  return (num % 2 == 0)
 }
 
-function draw(){
-  background(51);
-}
+let valsEven = vals.filter(isEven);
+console.log(valsEven);
