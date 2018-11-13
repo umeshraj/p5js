@@ -43,3 +43,8 @@ function compareWordLen(x, y){
 console.log("Sorting by word length");
 words.sort(compareWordLen);
 console.log(words);
+
+// arrow fn
+console.log("Reverse sort by word length + arrow fn")
+words.sort((a,b) => b.length-a.length);
+console.log(words)
