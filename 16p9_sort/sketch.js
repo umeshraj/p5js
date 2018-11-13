@@ -25,3 +25,21 @@ function compareXY(a, b){
 objects.sort(compareXY);
 console.log("After using compareXY fn in sort:")
 console.log(objects);
+
+// Another string example
+let sentence = "It   was  a dark and stormy  night";
+let words = sentence.split(" ").filter(s => s.length > 2)
+console.log(words);
+// sorting alphabetically
+console.log("Sorting alphabetically: ")
+words.sort();
+console.log(words);
+
+// sorting by length of words
+function compareWordLen(x, y){
+  return (x.length - y.length);
+}
+
+console.log("Sorting by word length");
+words.sort(compareWordLen);
+console.log(words);
