@@ -28,6 +28,14 @@ function draw(){
   //     particles.splice(i, 1);
   //   }
   // }
+
+  // Using reduce to compute centroids
+  let sumx = particles.reduce((x, p) => x + p.x, 0);
+  let sumy = particles.reduce((y, p) => y + p.y, 0);
+  let centerX = sumx/particles.length;
+  let centerY = sumy/particles.length;
+  fill(255, 0, 0);
+  ellipse(centerX, centerY, 24, 24);
 }
 
 class Particle{
