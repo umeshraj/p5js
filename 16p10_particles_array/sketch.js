@@ -27,7 +27,7 @@ class Particle{
   }
 
   show(){
-    stroke(255);
+    noStroke();
     fill(255, this.alpha);
     ellipse(this.x, this.y, 16);
   }
@@ -35,6 +35,6 @@ class Particle{
   update(){
     this.x += this.vx;
     this.y += this.vy;
-    this.alpha -= 5;
+    this.alpha -= 1;
   }
 }
