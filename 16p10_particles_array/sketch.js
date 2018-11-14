@@ -1,10 +1,10 @@
 /// <reference path="./p5d/p5.global-mode.d.ts" />
 
-let particles = new Array(100);
+let particles = [];
 
 function setup(){
   createCanvas(600, 400);
-  particles.fill(new Particle())
+  particles = new Array(100).fill(null).map(p=>new Particle());
 }
 
 function draw(){
@@ -41,7 +41,7 @@ class Particle{
   update(){
     this.x += this.vx;
     this.y += this.vy;
-    this.alpha -= 1;
+    this.alpha -= 5;
   }
 
   finished(){
