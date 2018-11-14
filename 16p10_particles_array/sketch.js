@@ -11,9 +11,9 @@ function draw(){
   p = new Particle();
   particles.push(p);
 
-  for (particle of particles){
-    particle.update();
-    particle.show();
+  for (let i=0; i<particles.length; i++){    
+    particles[i].update();
+    particles[i].show();
   }
 }
 
