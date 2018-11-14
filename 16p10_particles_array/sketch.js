@@ -11,7 +11,7 @@ function draw(){
   p = new Particle();
   particles.push(p);
 
-  for (let i=0; i<particles.length; i++){    
+  for (let i=particles.length-1; i>=0; i--){    
     particles[i].update();
     particles[i].show();
     if (particles[i].finished()){
@@ -30,8 +30,7 @@ class Particle{
   }
 
   show(){
-    // noStroke();
-    stroke(255);
+    noStroke();
     fill(255, this.alpha);
     ellipse(this.x, this.y, 16);
   }
@@ -39,7 +38,7 @@ class Particle{
   update(){
     this.x += this.vx;
     this.y += this.vy;
-    this.alpha -= 2;
+    this.alpha -= 1;
   }
 
   finished(){
