@@ -4,12 +4,13 @@ let particles = [];
 
 function setup(){
   createCanvas(600, 400);
-  p = new Particle();
-  particles.push(p);
 }
 
 function draw(){
   background(51);
+  p = new Particle();
+  particles.push(p);
+
   for (particle of particles){
     particle.update();
     particle.show();
