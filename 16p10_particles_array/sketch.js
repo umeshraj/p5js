@@ -1,14 +1,18 @@
 /// <reference path="./p5d/p5.global-mode.d.ts" />
 
+let particles = [];
+
 function setup(){
   createCanvas(600, 400);
   p = new Particle();
-
+  particles.push(p);
 }
 
 function draw(){
   background(51);
-  p.show();
+  for (particle of particles){
+    p.show();
+  }
 }
 
 class Particle{
