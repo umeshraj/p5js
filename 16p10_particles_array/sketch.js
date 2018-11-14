@@ -1,17 +1,18 @@
 /// <reference path="./p5d/p5.global-mode.d.ts" />
 
-let particles = [];
+let particles = new Array(100);
 
 function setup(){
   createCanvas(600, 400);
+  particles.fill(new Particle())
 }
 
 function draw(){
   background(51);
-  for (let i=0; i<5; i++){
-    p = new Particle();
-    particles.push(p);  
-  }
+  // for (let i=0; i<5; i++){
+  //   p = new Particle();
+  //   particles.push(p);  
+  // }
 
   for (let i=particles.length-1; i>=0; i--){    
     particles[i].update();
