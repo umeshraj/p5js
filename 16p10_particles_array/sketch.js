@@ -14,6 +14,9 @@ function draw(){
   for (let i=0; i<particles.length; i++){    
     particles[i].update();
     particles[i].show();
+    if (particles[i].finished()){
+      particles.splice(i, 1);
+    }
   }
 }
 
@@ -27,7 +30,8 @@ class Particle{
   }
 
   show(){
-    noStroke();
+    // noStroke();
+    stroke(255);
     fill(255, this.alpha);
     ellipse(this.x, this.y, 16);
   }
@@ -35,6 +39,10 @@ class Particle{
   update(){
     this.x += this.vx;
     this.y += this.vy;
-    this.alpha -= 1;
+    this.alpha -= 2;
+  }
+
+  finished(){
+    return this.alpha < 0;
   }
 }
