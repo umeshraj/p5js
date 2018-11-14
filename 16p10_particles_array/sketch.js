@@ -28,7 +28,7 @@ class Particle{
     this.x = 300;
     this.y = 380;
     this.vx = random(-1, 1);
-    this.vy = (-5, -1);
+    this.vy = random(-5, -1);
     this.alpha = 255;
   }
 
