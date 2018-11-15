@@ -5,10 +5,13 @@ const wordnikAPI = "https://api.wordnik.com/v4/words.json/randomWord?&minLength=
 
 function setup(){
   noCanvas();
-  let promise = fetch(wordnikAPI);
-  console.log(promise);
-  promise.then(gotData);
-  promise.catch(gotErr);
+  // let promise = fetch(wordnikAPI);
+  // console.log(promise);
+  // promise.then(gotData);
+  // promise.catch(gotErr);
+
+  // cleaner way is to chain
+  fetch(wordnikAPI).then(gotData).catch(gotErr);
 }
 
 function gotData(data){
