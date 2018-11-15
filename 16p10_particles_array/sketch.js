@@ -14,6 +14,9 @@ function draw(){
     particles.push(p);  
   }
 
+  // Let's sort the particles by color before showing them
+  particles.sort((a, b) => a.col-b.col);
+
   for (let particle of particles){
     particle.update();
     particle.show();
@@ -34,18 +37,18 @@ function draw(){
   let sumy = particles.reduce((y, p) => y + p.y, 0);
   let centerX = sumx/particles.length;
   let centerY = sumy/particles.length;
-
-  fill(255, 0, 0);
-  ellipse(centerX, centerY, 24, 24);
+  // show centroid
+  // fill(255, 0, 0);
+  // ellipse(centerX, centerY, 24, 24);
 
 
   // Computing sum with vectors
   let accV = createVector(0, 0); // accumulator vector
   let sumV = particles.reduce((v, p) => v.add(p.x, p.y), accV);
   sumV.div(particles.length);
-
-  fill(0, 255, 0);
-  ellipse(sumV.x, sumV.y, 10, 10);
+  // show centroid
+  // fill(0, 255, 0);
+  // ellipse(sumV.x, sumV.y, 10, 10);
 }
 
 class Particle{
@@ -54,12 +57,13 @@ class Particle{
     this.y = 380;
     this.vx = random(-1, 1);
     this.vy = random(-5, -1);
+    this.col = random(255);
     this.alpha = 255;
   }
 
   show(){
     noStroke();
-    fill(255, this.alpha);
+    fill(this.col);
     ellipse(this.x, this.y, 16);
   }
 
