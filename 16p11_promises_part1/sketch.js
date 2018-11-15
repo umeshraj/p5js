@@ -11,7 +11,12 @@ function setup(){
   // promise.catch(gotErr);
 
   // cleaner way is to chain
-  fetch(wordnikAPI).then(gotData).catch(gotErr);
+  // fetch(wordnikAPI).then(gotData).catch(gotErr);
+
+  // Arrow functions
+  fetch(wordnikAPI)
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
 }
 
 function gotData(data){
