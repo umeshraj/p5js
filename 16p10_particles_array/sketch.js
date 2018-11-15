@@ -17,10 +17,17 @@ function draw(){
   // Let's sort the particles by color before showing them
   particles.sort((a, b) => a.col-b.col);
 
-  for (let particle of particles){
-    particle.update();
-    particle.show();
-  }
+  // Display with for each
+  // for (let particle of particles){
+  //   particle.update();
+  //   particle.show();
+  // }
+
+  // Display with forEach
+  particles.forEach(p => {
+    p.update();
+    p.show();
+  });
 
   particles = particles.filter(p => !p.finished());
 
@@ -38,8 +45,8 @@ function draw(){
   let centerX = sumx/particles.length;
   let centerY = sumy/particles.length;
   // show centroid
-  // fill(255, 0, 0);
-  // ellipse(centerX, centerY, 24, 24);
+  fill(255, 0, 0);
+  ellipse(centerX, centerY, 24, 24);
 
 
   // Computing sum with vectors
@@ -47,8 +54,8 @@ function draw(){
   let sumV = particles.reduce((v, p) => v.add(p.x, p.y), accV);
   sumV.div(particles.length);
   // show centroid
-  // fill(0, 255, 0);
-  // ellipse(sumV.x, sumV.y, 10, 10);
+  fill(0, 255, 0);
+  ellipse(sumV.x, sumV.y, 10, 10);
 }
 
 class Particle{
