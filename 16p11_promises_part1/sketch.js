@@ -14,18 +14,24 @@ function setup(){
   // fetch(wordnikAPI).then(gotData).catch(gotErr);
 
   // Arrow functions
+  // fetch(wordnikAPI)
+  //   .then(data => console.log(data))
+  //   .catch(err => console.log(err));
+
+  // Getting data in JSON format
   fetch(wordnikAPI)
-    .then(data => console.log(data))
+    .then(response => response.json())
+    .then(json => console.log(json))
     .catch(err => console.log(err));
 }
 
-function gotData(data){
-  console.log(data);
-}
+// function gotData(data){
+//   console.log(data);
+// }
 
-function gotErr(err){
-  console.log(err);
-}
+// function gotErr(err){
+//   console.log(err);
+// }
 
 function draw(){
   background(51);
