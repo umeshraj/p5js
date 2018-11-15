@@ -34,8 +34,18 @@ function draw(){
   let sumy = particles.reduce((y, p) => y + p.y, 0);
   let centerX = sumx/particles.length;
   let centerY = sumy/particles.length;
+
   fill(255, 0, 0);
   ellipse(centerX, centerY, 24, 24);
+
+
+  // Computing sum with vectors
+  let accV = createVector(0, 0); // accumulator vector
+  let sumV = particles.reduce((v, p) => v.add(p.x, p.y), accV);
+  sumV.div(particles.length);
+
+  fill(0, 255, 0);
+  ellipse(sumV.x, sumV.y, 10, 10);
 }
 
 class Particle{
