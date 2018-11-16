@@ -2,9 +2,12 @@
 
 function setup(){
   noCanvas();
-  setTimeout(sayHello, 1000);
+  delay(1000);
 }
 
+function delay(time){
+  setTimeout(sayHello, time);
+}
 
 function sayHello(){
   createP('Hello!'); 
