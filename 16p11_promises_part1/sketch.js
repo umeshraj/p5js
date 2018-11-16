@@ -21,7 +21,7 @@ function setup(){
   // Getting data in JSON format
   fetch(wordnikAPI)
     .then(response => response.json())
-    .then(json => console.log(json))
+    .then(json => createP(json.word))
     .catch(err => console.log(err));
 }
 
