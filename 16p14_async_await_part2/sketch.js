@@ -6,19 +6,6 @@ const giphyAPI = "https://api.giphy.com/v1/gifs/search?rating=PG&api_key=dc6zaTO
 
 function setup(){
   noCanvas();
-  // let promise = fetch(wordnikAPI);
-  // console.log(promise);
-  // promise.then(gotData);
-  // promise.catch(gotErr);
-
-  // cleaner way is to chain
-  // fetch(wordnikAPI).then(gotData).catch(gotErr);
-
-  // Arrow functions
-  // fetch(wordnikAPI)
-  //   .then(data => console.log(data))
-  //   .catch(err => console.log(err));
-
   // Getting data in JSON format
   fetch(wordnikAPI)
     .then(response => response.json())
@@ -32,14 +19,6 @@ function setup(){
     })
     .catch(err => console.log(err));
 }
-
-// function gotData(data){
-//   console.log(data);
-// }
-
-// function gotErr(err){
-//   console.log(err);
-// }
 
 function draw(){
   background(51);
