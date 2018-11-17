@@ -6,17 +6,35 @@ const giphyAPI = "https://api.giphy.com/v1/gifs/search?rating=PG&api_key=dc6zaTO
 
 function setup(){
   noCanvas();
-  wordGIF(4)
-    .then(results => {
-      createP(results.word);
-      createImg(results.img);
-      return wordGIF(5);
-    })
+  // Sequential use of promise
+  // wordGIF(4)
+  //   .then(results => {
+  //     createP(results.word);
+  //     createImg(results.img);
+  //     return wordGIF(5);
+  //   })
+  //   .then(results => {
+  //     createP(results.word);
+  //     createImg(results.img);
+  //   })
+  //   .catch(err => console.error(err));
+
+  // Parallel use of promise
+  wordGIF(3)
     .then(results => {
       createP(results.word);
       createImg(results.img);
     })
     .catch(err => console.error(err));
+
+  wordGIF(4)
+    .then(results => {
+      createP(results.word);
+      createImg(results.img);
+    })
+    .catch(err => console.error(err));
+
+
 }
 
 async function wordGIF(num){
