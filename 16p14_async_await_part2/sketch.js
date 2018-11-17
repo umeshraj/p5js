@@ -6,8 +6,12 @@ const giphyAPI = "https://api.giphy.com/v1/gifs/search?rating=PG&api_key=dc6zaTO
 
 function setup(){
   noCanvas();
-  // Getting data in JSON format
-  fetch(wordnikAPI)
+  wordGIF();
+}
+
+function wordGIF(){
+    // Getting data in JSON format
+    fetch(wordnikAPI)
     .then(response => response.json())
     .then(json => {
         createP(json.word);
@@ -17,7 +21,7 @@ function setup(){
     .then(json => {
       createImg(json.data[0].images['fixed_height_small'].url);
     })
-    .catch(err => console.log(err));
+    .catch(err => console.error(err));
 }
 
 function draw(){
