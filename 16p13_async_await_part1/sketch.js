@@ -13,8 +13,9 @@ function delay(time){
   return new Promise((resolve, reject) => {
     if (isNaN(time)){
       reject(new Error('delay requires a number'));
-    }
-    setTimeout(resolve, time);
+    }else{
+      setTimeout(resolve, time);
+    }    
   });
 }
 
