@@ -10,6 +10,11 @@ function setup(){
     .then(results => {
       createP(results.word);
       createImg(results.img);
+      return wordGIF();
+    })
+    .then(results => {
+      createP(results.word);
+      createImg(results.img);
     })
     .catch(err => console.error(err));
 }
