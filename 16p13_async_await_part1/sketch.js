@@ -2,7 +2,7 @@
 
 function setup(){
   noCanvas();
-  delay(1000)
+  delayES8(1000)
     .then(() => createP("Hello, world!"))
     .catch((err) => console.error(err));
 }
@@ -17,6 +17,10 @@ function delay(time){
       setTimeout(resolve, time);
     }    
   });
+}
+
+async function delayES8(time){
+  await delay(time);
 }
 
 function sayHello(){
