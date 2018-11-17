@@ -20,20 +20,30 @@ function setup(){
   //   .catch(err => console.error(err));
 
   // Parallel use of promise
-  wordGIF(3)
+  // wordGIF(3)
+  //   .then(results => {
+  //     createP(results.word);
+  //     createImg(results.img);
+  //   })
+  //   .catch(err => console.error(err));
+
+  // wordGIF(4)
+  //   .then(results => {
+  //     createP(results.word);
+  //     createImg(results.img);
+  //   })
+  //   .catch(err => console.error(err));
+
+  // Parallel + sequential with promise.all()
+  let myPromises = [wordGIF(3), wordGIF(4), wordGIF(5)];
+  Promise.all(myPromises)
     .then(results => {
-      createP(results.word);
-      createImg(results.img);
+      for(let res of results){
+        createP(res.word);
+        createImg(res.img);
+      }
     })
     .catch(err => console.error(err));
-
-  wordGIF(4)
-    .then(results => {
-      createP(results.word);
-      createImg(results.img);
-    })
-    .catch(err => console.error(err));
-
 
 }
 
