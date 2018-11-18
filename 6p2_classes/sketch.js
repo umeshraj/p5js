@@ -10,8 +10,8 @@ function setup(){
 
 function draw(){
   background(51);
-  // bubble.move();
-  // bubble.show();
+  bubble.move();
+  bubble.show();
 }
 
 
@@ -21,5 +21,16 @@ class Bubble{
     this.x = 100;
     this.y = 100;
   }
+
+  move(){
+    this.x += random(-5, 5);
+    this.y += random(-5, 5);
+  }
+
+  show(){
+    fill(255);
+    ellipse(this.x ,this.y, 24, 24);
+  }
+
 
 }
