@@ -36,14 +36,16 @@ function setup(){
 
   // Parallel + sequential with promise.all()
   let myPromises = [];
-  for (let i=0; i<3; i++){
+  for (let i=2; i<10; i++){
     myPromises.push(wordGIF(i));
   }
   Promise.all(myPromises)
     .then(results => {
       for(let res of results){
         createP(res.word);
-        createImg(res.img);
+        if(res.img !== null){
+          createImg(res.img);
+        }
       }
     })
     .catch(err => console.error(err));
@@ -56,7 +58,13 @@ async function wordGIF(num){
     let json1 = await response1.json();
     let response2 = await fetch(giphyAPI + json1.word);
     let json2 = await response2.json();
-    let img_url = json2.data[0].images['fixed_height_small'].url;
+    let img_url = null;
+    try{
+      img_url = json2.data[0].images['fixed_height_small'].url;
+    }catch(err){
+      console.log("No image found for " + json1.word);
+      console.error(err);
+    }
 
     return{
       word: json1.word,
