@@ -35,7 +35,10 @@ function setup(){
   //   .catch(err => console.error(err));
 
   // Parallel + sequential with promise.all()
-  let myPromises = [wordGIF(3), wordGIF(4), wordGIF(5)];
+  let myPromises = [];
+  for (let i=0; i<3; i++){
+    myPromises.push(wordGIF(i));
+  }
   Promise.all(myPromises)
     .then(results => {
       for(let res of results){
