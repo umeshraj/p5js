@@ -1,17 +1,20 @@
 /// <reference path="./p5d/p5.global-mode.d.ts" />
 
-let bubble;
+let bubble1;
+let bubble2;
 
 function setup(){
   createCanvas(400, 300);
-  bubble = new Bubble();
-  print(bubble.x, bubble.y);
+  bubble1 = new Bubble();
+  bubble2 = new Bubble();
 }
 
 function draw(){
   background(51);
-  bubble.move();
-  bubble.show();
+  bubble1.move();
+  bubble1.show();
+  bubble2.move();
+  bubble2.show();
 }
 
 
