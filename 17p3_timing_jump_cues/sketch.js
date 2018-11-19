@@ -32,7 +32,9 @@ function togglePlaying(){
 
 function jumpSong(){
   let len = song.duration();
-  song.jump(random(len)); 
+  let t = random(len);
+  console.log("Jumping to " + t + " of " + len + " sec");
+  song.jump(t); 
 }
 
 function draw(){
