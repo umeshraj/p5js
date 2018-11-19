@@ -1,14 +1,15 @@
 /// <reference path="./p5d/p5.global-mode.d.ts" />
 
-var sound;
+var song;
 
 function preload(){
-  sound  = loadSound('rainbow.mp3');
+  song  = loadSound('rainbow.mp3');
 }
 
 function setup(){
   createCanvas(400, 300);
-  sound.play();
+  song.play();
+  song.setVolume(0.5);
 }
 
 function draw(){
