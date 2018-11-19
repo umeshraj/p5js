@@ -19,6 +19,10 @@ function loaded(){
 function togglePlaying(){
   if(!song.isPlaying()){
     song.play();
+    button.html("Pause");
+  }else{
+    song.pause();
+    button.html("Play");
   } 
 }
 
