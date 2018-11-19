@@ -17,7 +17,9 @@ function loaded(){
 }
 
 function togglePlaying(){
-  song.play();
+  if(!song.isPlaying()){
+    song.play();
+  } 
 }
 
 function draw(){
