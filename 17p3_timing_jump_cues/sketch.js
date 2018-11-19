@@ -2,6 +2,7 @@
 
 let song;
 let button;
+let jumpButton;
 
 
 function setup(){
@@ -9,6 +10,9 @@ function setup(){
   song  = loadSound('rainbow.mp3', loaded);   
   button = createButton("Play");
   button.mousePressed(togglePlaying);
+  // adding jump button
+  jumpButton = createButton("jump");
+  jumpButton.mousePressed(jumpSong);
   song.setVolume(0.5);
 }
 
@@ -24,6 +28,11 @@ function togglePlaying(){
     song.pause();
     button.html("Play");
   } 
+}
+
+function jumpSong(){
+  let len = song.duration();
+  song.jump(len/2);
 }
 
 function draw(){
