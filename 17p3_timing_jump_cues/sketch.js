@@ -7,6 +7,7 @@ let jumpButton;
 
 function setup(){
   createCanvas(400, 300);
+  background(51);
   song  = loadSound('rainbow.mp3', loaded);   
   button = createButton("Play");
   button.mousePressed(togglePlaying);
@@ -38,5 +39,7 @@ function jumpSong(){
 }
 
 function draw(){
-  background(51);
+  if (song.currentTime() > 5){
+    background(255, 0, 255);
+  }
 }
