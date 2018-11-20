@@ -3,6 +3,7 @@
 let song;
 let button;
 let jumpButton;
+let amp;
 
 
 function setup(){
@@ -15,6 +16,9 @@ function setup(){
   song.addCue(2, changeBackground, color(0, 255, 0));
   song.addCue(4, changeBackground, color(255, 255, 0));
   song.addCue(6, changeBackground, color(100, 255, 100));
+
+  // Amplitude
+  amp = new p5.Amplitude();
 }
 
 function loaded(){
@@ -49,8 +53,9 @@ function changeBackground(color){
 }
 
 function draw(){
-  // // Keep checking time and change background after 5s
-  // if (song.currentTime() > 5){
-  //   background(255, 0, 255);
-  // }
+
+  fill(255, 0, 255);
+  let vol = amp.getLevel();
+  let diameter = map(vol, 0, 1, 10, 300);
+  ellipse(width/2, height/2, diameter, diameter);
 }
