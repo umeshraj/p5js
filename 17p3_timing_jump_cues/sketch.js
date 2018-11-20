@@ -15,6 +15,9 @@ function setup(){
   jumpButton = createButton("jump");
   jumpButton.mousePressed(jumpSong);
   song.setVolume(0.5);
+
+  // adding a song cue
+  song.addCue(5, changeBackground);
 }
 
 function loaded(){
@@ -38,8 +41,13 @@ function jumpSong(){
   song.jump(t); 
 }
 
+function changeBackground(){
+  background(255, 0, 255);
+}
+
 function draw(){
-  if (song.currentTime() > 5){
-    background(255, 0, 255);
-  }
+  // // Keep checking time and change background after 5s
+  // if (song.currentTime() > 5){
+  //   background(255, 0, 255);
+  // }
 }
