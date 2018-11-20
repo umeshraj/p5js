@@ -17,7 +17,9 @@ function setup(){
   song.setVolume(0.5);
 
   // adding a song cue
-  song.addCue(5, changeBackground, color(0, 255, 0));
+  song.addCue(2, changeBackground, color(0, 255, 0));
+  song.addCue(4, changeBackground, color(255, 255, 0));
+  song.addCue(6, changeBackground, color(100, 255, 100));
 }
 
 function loaded(){
