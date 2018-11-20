@@ -9,11 +9,6 @@ function setup(){
   createCanvas(400, 300);
   background(51);
   song  = loadSound('rainbow.mp3', loaded);   
-  button = createButton("Play");
-  button.mousePressed(togglePlaying);
-  // adding jump button
-  jumpButton = createButton("jump");
-  jumpButton.mousePressed(jumpSong);
   song.setVolume(0.5);
 
   // adding a song cue
@@ -24,6 +19,12 @@ function setup(){
 
 function loaded(){
   console.log('Loaded');
+  button = createButton("Play");
+  button.mousePressed(togglePlaying);
+  // adding jump button
+  jumpButton = createButton("jump");
+  jumpButton.mousePressed(jumpSong);
+
 }
 
 function togglePlaying(){
