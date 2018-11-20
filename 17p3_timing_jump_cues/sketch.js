@@ -17,7 +17,7 @@ function setup(){
   song.setVolume(0.5);
 
   // adding a song cue
-  song.addCue(5, changeBackground);
+  song.addCue(5, changeBackground, color(0, 255, 0));
 }
 
 function loaded(){
@@ -41,8 +41,8 @@ function jumpSong(){
   song.jump(t); 
 }
 
-function changeBackground(){
-  background(255, 0, 255);
+function changeBackground(color){
+  background(color);
 }
 
 function draw(){
