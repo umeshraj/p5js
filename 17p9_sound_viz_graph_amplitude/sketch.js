@@ -32,10 +32,16 @@ function draw(){
   let vol = amp.getLevel();
   volHistory.push(vol);
 
+  noFill();
+  beginShape();
   for (let i=0; i<volHistory.length; i++){
     let y = map(volHistory[i], 0, 1, height, 0);
     stroke(255);
-    point(i, y);
+    vertex(i, y);
+  }
+  endShape()
+  if (volHistory.length > width){
+    volHistory.splice(0, 1);
   }
 
   // let rad = map(vol, 0, 1, 10, 100);
