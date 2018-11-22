@@ -15,5 +15,5 @@ function draw(){
   background(51);
   let rad = map(vol, 0, 1, 10, 100);
   fill(255);
-  ellipse(width/2, height/2, rad);
+  ellipse(width/2, height/2, 100, rad);
 }
