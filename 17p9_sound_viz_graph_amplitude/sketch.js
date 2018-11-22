@@ -1,17 +1,32 @@
 /// <reference path="./p5d/p5.global-mode.d.ts" />
 
 let mic;
+let song;
+let button;
+let amp;  // amplitude object
+
+function preload(){
+  song = loadSound('this-dot-kp.mp3');
+}
 
 function setup(){
   createCanvas(400, 300);
-  mic = new p5.AudioIn();
-  mic.start();
+  button = createButton('Toggle');
+  button.mousePressed(toggleSong);
+  song.play();  
+  amp = new p5.Amplitude();
+}
+
+function toggleSong(){
+  if (song.isPlaying()){
+    song.pause();
+  }else{
+    song.play();
+  }
 }
 
 function draw(){
-  let vol = mic.getLevel();
-  console.log(vol);
-
+  let vol = amp.getLevel();
   background(51);
   let rad = map(vol, 0, 1, 10, 100);
   fill(255);
