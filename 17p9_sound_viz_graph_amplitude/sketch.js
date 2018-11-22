@@ -35,7 +35,7 @@ function draw(){
   noFill();
   beginShape();
   for (let i=0; i<volHistory.length; i++){
-    let y = map(volHistory[i], 0, 1, height, 0);
+    let y = map(volHistory[i], 0, 1, height/2, 0);
     stroke(255);
     vertex(i, y);
   }
