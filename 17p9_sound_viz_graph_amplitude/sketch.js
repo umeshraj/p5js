@@ -4,6 +4,7 @@ let mic;
 let song;
 let button;
 let amp;  // amplitude object
+let volHistory = []; 
 
 function preload(){
   song = loadSound('this-dot-kp.mp3');
@@ -13,7 +14,7 @@ function setup(){
   createCanvas(400, 300);
   button = createButton('Toggle');
   button.mousePressed(toggleSong);
-  song.play();  
+  // song.play();  
   amp = new p5.Amplitude();
 }
 
@@ -26,9 +27,18 @@ function toggleSong(){
 }
 
 function draw(){
-  let vol = amp.getLevel();
   background(51);
-  let rad = map(vol, 0, 1, 10, 100);
-  fill(255);
-  ellipse(width/2, height/2, 100, rad);
+
+  let vol = amp.getLevel();
+  volHistory.push(vol);
+
+  for (let i=0; i<volHistory.length; i++){
+    let y = map(volHistory[i], 0, 1, height, 0);
+    stroke(255);
+    point(i, y);
+  }
+
+  // let rad = map(vol, 0, 1, 10, 100);
+  // fill(255);
+  // ellipse(width/2, height/2, 100, rad);
 }
