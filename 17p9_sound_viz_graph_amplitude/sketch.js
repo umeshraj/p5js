@@ -32,14 +32,19 @@ function draw(){
   let vol = amp.getLevel();
   volHistory.push(vol);
 
+  push();
   noFill();
+  let currentY = map(vol, 0, 1, height, 0);  // make plot jump 
+  translate(0, height/2-currentY);
   beginShape();
   for (let i=0; i<volHistory.length; i++){
-    let y = map(volHistory[i], 0, 1, height/2, 0);
+    // let y = map(volHistory[i], 0, 1, height/2, 0);
+    let y = map(volHistory[i], 0, 1, height, 0);
     stroke(255);
     vertex(i, y);
   }
   endShape()
+  pop();
 
   // Draw a red line at latest point
   stroke(255, 0, 0);
