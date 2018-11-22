@@ -40,7 +40,13 @@ function draw(){
     vertex(i, y);
   }
   endShape()
-  if (volHistory.length > width){
+
+  // Draw a red line at latest point
+  stroke(255, 0, 0);
+  line(volHistory.length, 0, volHistory.length, height);
+
+  // remove initial points for moving chart
+  if (volHistory.length > width-10){
     volHistory.splice(0, 1);
   }
 
