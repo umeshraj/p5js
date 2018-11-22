@@ -12,6 +12,7 @@ function preload(){
 
 function setup(){
   createCanvas(400, 300);
+  angleMode(DEGREES);  // want p5 to think in degrees
   button = createButton('Toggle');
   button.mousePressed(toggleSong);
   // song.play();  
@@ -32,10 +33,19 @@ function draw(){
   let vol = amp.getLevel();
   volHistory.push(vol);
 
-  push();
+  // Radial plot
+  beginShape();
+  for (let i=0; i<360; i++){
+    let r = 100;
+    let x = r * cos(i);
+    let y = r * sin(i);
+    // let y = map(volHistory[i], 0, 1, height, 0);
+    stroke(255);
+    vertex(x, y);
+  }
+  endShape()
+
   noFill();
-  let currentY = map(vol, 0, 1, height, 0);  // make plot jump 
-  translate(0, height/2-currentY);
   beginShape();
   for (let i=0; i<volHistory.length; i++){
     // let y = map(volHistory[i], 0, 1, height/2, 0);
@@ -44,11 +54,7 @@ function draw(){
     vertex(i, y);
   }
   endShape()
-  pop();
 
-  // Draw a red line at latest point
-  stroke(255, 0, 0);
-  line(volHistory.length, 0, volHistory.length, height);
 
   // remove initial points for moving chart
   if (volHistory.length > width-10){
