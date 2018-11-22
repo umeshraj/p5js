@@ -34,30 +34,22 @@ function draw(){
   volHistory.push(vol);
 
   // Radial plot
+  translate(width/2, height/2);
+  noFill();
+  stroke(255);
   beginShape();
-  for (let i=0; i<360; i++){
-    let r = 100;
+  for (let i=0; i<volHistory.length; i++){
+    let r = map(volHistory[i], 0, 1, 0, width);
     let x = r * cos(i);
     let y = r * sin(i);
     // let y = map(volHistory[i], 0, 1, height, 0);
-    stroke(255);
+    // stroke(255);
     vertex(x, y);
   }
-  endShape()
-
-  noFill();
-  beginShape();
-  for (let i=0; i<volHistory.length; i++){
-    // let y = map(volHistory[i], 0, 1, height/2, 0);
-    let y = map(volHistory[i], 0, 1, height, 0);
-    stroke(255);
-    vertex(i, y);
-  }
-  endShape()
-
+  endShape();
 
   // remove initial points for moving chart
-  if (volHistory.length > width-10){
+  if (volHistory.length > 360){
     volHistory.splice(0, 1);
   }
 
