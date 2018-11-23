@@ -6,6 +6,7 @@ function setup(){
 
 function draw(){
   background(51);
-  fill(255, 0, 150);
+
+  rectMode(CENTER);
   rect(0, 0, 50, 50);
 }
