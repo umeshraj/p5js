@@ -19,7 +19,7 @@ function setup(){
   button = createButton('Toggle');
   button.mousePressed(toggleSong);
   // song.play();  
-  fft = new p5.FFT(0,64);
+  fft = new p5.FFT(0.9,64);
   w = width/64;
 }
 
