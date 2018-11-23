@@ -14,6 +14,7 @@ function preload(){
 
 function setup(){
   createCanvas(256, 256);
+  colorMode(HSB);
   angleMode(DEGREES);  // want p5 to think in degrees
   button = createButton('Toggle');
   button.mousePressed(toggleSong);
@@ -31,16 +32,18 @@ function toggleSong(){
 }
 
 function draw(){
-  background(51);
+  background(0);
 
   let spectrum = fft.analyze();
   // console.log(spectrum.length);
   // plot the spectrum
-  stroke(255);
+  noStroke();
   for (let i=0; i<spectrum.length; i++){
     let amp = spectrum[i];
     let y = map(amp, 0, 255, height, 0);
-    line(i*w, height, i*w, y);
+    // line(i*w, height, i*w, y);
+    fill(i, 255, 255);
+    rect(i*w, y, w-5, height-y);
   }
   
 }
