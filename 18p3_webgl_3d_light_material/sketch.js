@@ -11,6 +11,7 @@ function draw(){
   let dx = mouseX - width/2;
   let dy = mouseY - height/2;
   let vec = createVector(dx, dy, 0);
+  vec.normalize();
 
   // rectMode(CENTER);
 
