@@ -14,7 +14,7 @@ function draw(){
   // fill(0, 0, 255);
   // normalMaterial();
   // ambientLight(255);
-  pointLight(0, 0, 255, -200, 0, +200);
+  pointLight(0, 0, 255, mouseX-200, mouseY-200, +200);
   ambientMaterial(255);
   // translate(mouseX - width/2, mouseY-height/2);
   // translate(0, 0, mouseX);
