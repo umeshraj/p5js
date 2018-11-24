@@ -8,15 +8,14 @@ function setup(){
 
 function draw(){
   background(128);
-
-  rectMode(CENTER);
+  // rectMode(CENTER);
 
   // fill(0, 0, 255);
   // normalMaterial();
   // ambientLight(255);
   // pointLight(0, 0, 255, -200, 0, +200);
   // pointLight(255, 0, 0, 0, +200, +200);
-  directionalLight(255, 255, 0, -1, 0, 0);
+  directionalLight(255, 255, 0, 1, 0, 0);
 
   ambientMaterial(255);
   // specularMaterial(255);
