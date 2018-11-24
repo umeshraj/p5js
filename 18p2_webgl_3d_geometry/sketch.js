@@ -13,9 +13,11 @@ function draw(){
 
   noStroke();
   fill(0, 0, 255);
-  rotateZ(angle);
+  translate(mouseX - width/2, mouseY-height/2);
+
+  rotateZ(angle * 0.2);
   rotateY(angle * 0.3);
-  rotateX(angle * 0.7);
+  rotateX(angle * 0.1);
   // rect(0, 0, 150, 100);
   box(10, 100, 50);
 
