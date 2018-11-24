@@ -8,6 +8,9 @@ function setup(){
 
 function draw(){
   background(128);
+  let dx = mouseX - width/2;
+  let dy = mouseY - height/2;
+
   // rectMode(CENTER);
 
   // fill(0, 0, 255);
@@ -15,7 +18,7 @@ function draw(){
   // ambientLight(255);
   // pointLight(0, 0, 255, -200, 0, +200);
   // pointLight(255, 0, 0, 0, +200, +200);
-  directionalLight(255, 255, 0, 1, 0, 0);
+  directionalLight(255, 255, 0, dx, dy, 0);
 
   ambientMaterial(255);
   // specularMaterial(255);
@@ -28,7 +31,7 @@ function draw(){
   // rect(0, 0, 150, 100);
   // box(10, 100, 50);
   noStroke();
-  sphere(100);
+  torus(100, 10);
 
   angle += 0.07;
 }
