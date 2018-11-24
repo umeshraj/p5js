@@ -11,8 +11,9 @@ function draw(){
 
   rectMode(CENTER);
 
-  noStroke();
-  fill(0, 0, 255);
+  // noStroke();
+  // fill(0, 0, 255);
+  normalMaterial();
   // translate(mouseX - width/2, mouseY-height/2);
   // translate(0, 0, mouseX);
 
