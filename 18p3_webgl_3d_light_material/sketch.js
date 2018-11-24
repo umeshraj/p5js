@@ -13,8 +13,9 @@ function draw(){
 
   // fill(0, 0, 255);
   // normalMaterial();
-  ambientLight(255);
-  ambientMaterial(0, 0, 255);
+  // ambientLight(255);
+  pointLight(0, 0, 255, -200, 0, +200);
+  ambientMaterial(255);
   // translate(mouseX - width/2, mouseY-height/2);
   // translate(0, 0, mouseX);
 
@@ -24,7 +25,7 @@ function draw(){
   // rect(0, 0, 150, 100);
   // box(10, 100, 50);
   noStroke();
-  torus(100, 10);
+  sphere(100);
 
   angle += 0.07;
 }
