@@ -14,7 +14,8 @@ function draw(){
   noStroke();
   fill(0, 0, 255);
   rotateZ(angle);
-  rotateY(angle * 0.3)
+  rotateY(angle * 0.3);
+  rotateX(angle * 0.7);
   rect(0, 0, 150, 100);
 
   angle += 0.07;
