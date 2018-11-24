@@ -10,6 +10,7 @@ function draw(){
   background(128);
   let dx = mouseX - width/2;
   let dy = mouseY - height/2;
+  let vec = createVector(dx, dy, 0);
 
   // rectMode(CENTER);
 
@@ -18,7 +19,7 @@ function draw(){
   // ambientLight(255);
   // pointLight(0, 0, 255, -200, 0, +200);
   // pointLight(255, 0, 0, 0, +200, +200);
-  directionalLight(255, 255, 0, dx, dy, 0);
+  directionalLight(255, 255, 0, vec);
 
   ambientMaterial(255);
   // specularMaterial(255);
