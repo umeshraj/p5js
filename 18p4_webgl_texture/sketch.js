@@ -17,16 +17,29 @@ function setup(){
 
 function draw(){
   background(128);
-  ambientLight(255);
+  // ambientLight(255);
+  let dx = mouseX - width/2;
+  let dy = mouseY - height/2;
+  let vec = createVector(dx, dy, 0);
+  vec.normalize();
+  directionalLight(255, 255, 255, vec);
 
-  texture(cam);
-
+  push();
   rotateZ(angle * 0.2);
   rotateY(angle * 0.3);
   rotateX(angle * 0.1);
-
+  
   noStroke();
+  texture(cam);
   box(100);
+  pop();
+
+  // adding a plane
+  translate(0, 100);
+  rotateX(HALF_PI);
+  ambientMaterial(51);
+  plane(640, 480);
+
 
   angle += 0.07;
 }
