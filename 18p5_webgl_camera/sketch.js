@@ -17,7 +17,11 @@ function setup(){
 
 function draw(){
   background(128);
-  translate(0, 0, mouseX);
+
+  let x = map(mouseX, 0, width, -200, 0);
+  camera(mouseX, mouseY, 0, -(height/2)/tan(PI/6), 0, 0, 0, 1, 0);
+
+
   // ambientLight(255);
   let dx = mouseX - width/2;
   let dy = mouseY - height/2;
