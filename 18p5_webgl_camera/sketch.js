@@ -18,8 +18,9 @@ function setup(){
 function draw(){
   background(128);
 
-  let x = map(mouseX, 0, width, -200, 0);
-  camera(mouseX, mouseY, 0, -(height/2)/tan(PI/6), 0, 0, 0, 1, 0);
+  let x = random(-5, 5);
+  let y = random(-5, 5);
+  camera(x, y, (height/2)/tan(PI/6), x, y, 0, 0, 1, 0);
 
 
   // ambientLight(255);
