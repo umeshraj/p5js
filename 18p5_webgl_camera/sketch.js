@@ -30,7 +30,7 @@ function draw(){
   // perspective(fov, width/height, cameraZ/10, cameraZ*10);
   // // perspective(fov, width/height, 0, 2000);
 
-  // ortho();
+  ortho(-200, 200, -200, 200, -1000, 1000);
   pointLight(255, 255, 255, 110, 110, 200);
     // ambientLight(255);
   // let dx = mouseX - width/2;
