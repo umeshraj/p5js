@@ -30,25 +30,28 @@ function draw(){
   // perspective(fov, width/height, cameraZ/10, cameraZ*10);
   // // perspective(fov, width/height, 0, 2000);
 
-  ortho();
+  // ortho();
+  pointLight(255, 255, 255, 110, 110, 200);
+    // ambientLight(255);
+  // let dx = mouseX - width/2;
+  // let dy = mouseY - height/2;
+  // let vec = createVector(dx, dy, 0);
+  // vec.normalize();
+  // directionalLight(255, 255, 255, vec);
 
-  // ambientLight(255);
-  let dx = mouseX - width/2;
-  let dy = mouseY - height/2;
-  let vec = createVector(dx, dy, 0);
-  vec.normalize();
-  directionalLight(255, 255, 255, vec);
-
-  push();
-  rotateZ(angle * 0.2);
-  rotateY(angle * 0.3);
-  rotateX(angle * 0.1);
+  for (let x=-200; x<200; x+=50){
+    push();
+    translate(x, 0, 0);
+    rotateZ(angle * 0.2);
+    rotateY(angle * 0.3);
+    rotateX(angle * 0.1);
+    noStroke();
+    // texture(cam);
+    ambientMaterial(255);
+    box(25);
+    pop();        
+  }
   
-  noStroke();
-  // texture(cam);
-  normalMaterial();
-  box(100);
-  pop();
 
   // adding a plane
   translate(0, 100);
