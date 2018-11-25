@@ -12,6 +12,7 @@ function setup(){
   createCanvas(400, 300, WEBGL);
   cam = createCapture(VIDEO);
   cam.size(200, 200);
+  cam.hide();
 }
 
 function draw(){
