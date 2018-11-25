@@ -21,7 +21,7 @@ function draw(){
   rotateX(angle * 0.1);
 
   noStroke();
-  plane(200, 200);
+  box(100);
 
   angle += 0.07;
 }
