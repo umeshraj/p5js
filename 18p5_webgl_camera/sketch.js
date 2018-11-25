@@ -9,7 +9,7 @@ function preload(){
 }
 
 function setup(){
-  createCanvas(400, 300, WEBGL);
+  createCanvas(640, 480, WEBGL);
   cam = createCapture(VIDEO);
   cam.size(200, 200);
   cam.hide();
@@ -39,9 +39,9 @@ function draw(){
   // vec.normalize();
   // directionalLight(255, 255, 255, vec);
 
-  for (let x=-200; x<200; x+=50){
+  for (let x=-100; x<100; x+=25){
     push();
-    translate(x, 0, 0);
+    translate(x, 0, x+50);
     rotateZ(angle * 0.2);
     rotateY(angle * 0.3);
     rotateX(angle * 0.1);
