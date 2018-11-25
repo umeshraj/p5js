@@ -18,10 +18,17 @@ function setup(){
 function draw(){
   background(128);
 
-  let x = random(-5, 5);
-  let y = random(-5, 5);
-  camera(x, y, (height/2)/tan(PI/6), x, y, 0, 0, 1, 0);
+  // Camera functions
+  // let x = random(-5, 5);
+  // let y = random(-5, 5);
+  // camera(x, y, (height/2)/tan(PI/6), x, y, 0, 0, 1, 0);
 
+  // Perspective functions
+  let fov = map(mouseX, 0, width, 0, PI/3);
+  // let cameraZ = (height/2) / tan(fov/2.0);
+  let cameraZ = (height/2) / tan((PI/3)/2.0);
+  perspective(fov, width/height, cameraZ/10, cameraZ*10);
+  // perspective(fov, width/height, 0, 2000);
 
   // ambientLight(255);
   let dx = mouseX - width/2;
