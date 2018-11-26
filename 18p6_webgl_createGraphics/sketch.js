@@ -17,29 +17,31 @@ function setup(){
 
 function draw(){
   background(0);
-  // graphics.background(random(255));
-  graphics.fill(255, 0, 255);
-  graphics.ellipse(mouseX, mouseY, 10);
+  
 
   // text graphics
   love = createGraphics(300, 200);
-  love.background(255, 100);
+  love.background(0);
   love.fill(255);
   love.textAlign(CENTER);
   love.textSize(64);
-  love.text('love', 150, 50);
+  love.text('love', 150, 100);
 
-
+  // // graphics.background(random(255));
+  // graphics.fill(255, 0, 255);
+  // graphics.ellipse(mouseX, mouseY, 10);
   ambientLight(100);
   directionalLight(255, 255, 255, 0, 0, -1);
   rotateX(angle);
   rotateY(angle * 1.3);
   rotateZ(angle * 0.7);
 
-  // texture(graphics);
-  texture(love);
-  box(100);
+  // // texture(graphics);
+  // texture(love);
+  // box(100);
 
+  texture(love);
+  plane(300, 200);
 
   angle += 0.03;
 }
