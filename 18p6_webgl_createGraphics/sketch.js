@@ -16,7 +16,10 @@ function setup(){
 
 function draw(){
   background(0);
-  graphics.background(random(255));
+  // graphics.background(random(255));
+  graphics.fill(255, 0, 255);
+  graphics.ellipse(mouseX, mouseY, 10);
+
   ambientLight(100);
   directionalLight(255, 255, 255, 0, 0, -1);
   rotateX(angle);
