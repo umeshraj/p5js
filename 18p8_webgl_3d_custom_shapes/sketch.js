@@ -19,7 +19,16 @@ function draw(){
   rotateY(angle * 1.3);
   rotateZ(angle * 0.7);
 
-  texture(puppy);
-  box(100);
+  normalMaterial();
+  fill(255);
+  beginShape();
+  vertex(0, 0);
+  vertex(100, 0);
+  vertex(100, 100);
+  vertex(0, 100);
+  endShape(CLOSE);
+
+  // texture(puppy);
+  // box(100);
   angle += 0.03;
 }
