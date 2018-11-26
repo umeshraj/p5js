@@ -15,15 +15,16 @@ function setup(){
 function draw(){
   background(0);
   
-  ambientLight(255, 0, 255);
-  directionalLight(255, 255, 255, 0, 0, -1);
+  ambientLight(255);
+  directionalLight(255, 255, 255, 0, 1, 0);
   rotateX(angle);
   rotateY(angle * 1.3);
   rotateZ(angle * 0.7);
 
   noStroke();
   // box(100);
-  normalMaterial();
+  // normalMaterial();
+  texture(puppy);
   model(train);
 
   angle += 0.03;
