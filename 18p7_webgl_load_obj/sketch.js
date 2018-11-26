@@ -23,7 +23,7 @@ function draw(){
 
   noStroke();
   // box(100);
-
+  normalMaterial();
   model(train);
 
   angle += 0.03;
