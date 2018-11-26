@@ -3,6 +3,7 @@
 let angle = 0;
 let puppy;
 let graphics;
+let love;
 
 function preload(){
   puppy = loadImage("images/puppy.jpeg");
@@ -20,13 +21,23 @@ function draw(){
   graphics.fill(255, 0, 255);
   graphics.ellipse(mouseX, mouseY, 10);
 
+  // text graphics
+  love = createGraphics(300, 200);
+  love.background(255, 100);
+  love.fill(255);
+  love.textAlign(CENTER);
+  love.textSize(64);
+  love.text('love', 150, 50);
+
+
   ambientLight(100);
   directionalLight(255, 255, 255, 0, 0, -1);
   rotateX(angle);
   rotateY(angle * 1.3);
   rotateZ(angle * 0.7);
 
-  texture(graphics);
+  // texture(graphics);
+  texture(love);
   box(100);
 
 
