@@ -13,11 +13,11 @@ function setup(){
 
 function draw(){
   background(0);
-  ambientLight(100);
+  ambientLight(255);
   directionalLight(255, 255, 255, 0, 0, -1);
-  rotateX(angle);
-  rotateY(angle * 1.3);
-  rotateZ(angle * 0.7);
+  // rotateX(angle);
+  // rotateY(angle * 1.3);
+  // rotateZ(angle * 0.7);
   translate(-50, -50);
 
   normalMaterial();
@@ -27,7 +27,7 @@ function draw(){
   beginShape();
   vertex(0, 0, 0, 0, 0);
   vertex(100, 0, 0, 1, 0);
-  vertex(100, 100, 0, 1, 1);
+  vertex(50, 50, 0, 1, 1);
   vertex(0, 100, 0,  0, 1);
   endShape(CLOSE);
 
