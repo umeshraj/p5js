@@ -27,7 +27,7 @@ function draw(){
   beginShape();
   vertex(0, 0, 0, 0, 0);
   vertex(100, 0, 0, 1, 0);
-  vertex(50, 50, 0, 1, 1);
+  vertex(mouseX, mouseY, 0, 1, 1);
   vertex(0, 100, 0,  0, 1);
   endShape(CLOSE);
 
